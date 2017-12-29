@@ -1,0 +1,17 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<!-- <div style="text-align:center">
+  <main-form></main-form>
+</div>
+-->
+
+<div style="text-align:center">
+  <paragraphs [paragraphs]="paragraphs">
+    <ng-template let-para let-odd="odd">
+      <!-- Need to share ng-template for para variable, can't do two separate for some reason -->
+      <reverse [para]="para"></reverse>
+      <p>{{para.body}}</p>
+      <p>{{para.footer}}</p>
+      <div *ngIf="odd">This hsiz is odd@</div>
+    </ng-template>
+  </paragraphs>
+</div>
