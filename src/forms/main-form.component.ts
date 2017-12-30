@@ -47,13 +47,36 @@ export class MainFormComponent implements OnInit {
         )(this.mainform);
     }
     addControl(): FormGroup {
-        return this.fb.group({
+        // return toTree([
+        //     {
+        //         'name': 'name',
+        //         'default': 'Toby',
+        //         'validators': [Validators.required],
+        //     },
+        //     {
+        //         'group': {
+        //             'name': 'address',
+        //             'values': [
+        //                 {
+        //                     'name': 'street',
+        //                     'default': 9954
+        //                 },
+        //                 {
+        //                     'name': 'zip',
+        //                     'default': 6546
+        //                 }
+        //             ]
+        //         }
+        //     }
+        // ]
+        //     , this.fb)
+        return makeFormGroups({
             name: ['Toby', Validators.required],
-            address: this.fb.group({
+            address: {
                 street: [9954],
                 zip: 6546,
-            })
-        });
+            }
+        }, this.fb)
     }
 }
 function getProp(prop, obj) {
@@ -65,4 +88,26 @@ function getAsFormArray(obj) {
 function addToArray(item, arr: Array<FormGroup>) {
     arr.push(item);
     return arr;
+}
+
+function toTree(o, fb) {
+    let f = {};
+    o.forEach(e => {
+        if (e.name) f[e.name] = [e.default, 
+            e.validators ? e.validators : undefined ]
+        else f[e.group.name] = toTree(e.group.values, fb)
+    });
+    console.log(f)
+    return fb.group(f);
+}
+function makeFormGroups(o, fb) {
+    let f = {};
+    Object.keys(o).forEach(e => {
+        if (isObject(o[e])) f[e] = fb.group(o[e])
+        else f[e] = o[e]
+    })
+    return fb.group(f);
+}
+function isObject(o) {
+    return o.toString() == '[object Object]'
 }
