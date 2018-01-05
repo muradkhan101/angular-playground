@@ -6,17 +6,24 @@ import { AppComponent } from './app.component';
 import { RepeatComponent } from './repeat.component';
 import { MainFormComponent } from '../forms/main-form.component';
 import { SubFormComponent } from '../forms/subform.component';
-import { ParagraphTemplate } from '../templateRefs/paragraph-template.component';
 import { ReverseParagraphComponent } from '../templateRefs/reverse-paragraph.component';
-
+import { RefComponent } from '../refStuff/ref.component';
+import {
+  ListDirective,
+  TitleDirective,
+  BodyComponent,
+} from '../refStuff/refWithDirectives';
 @NgModule({
   declarations: [
     AppComponent,
-    ParagraphTemplate,
     ReverseParagraphComponent,
     RepeatComponent,
     MainFormComponent,
     SubFormComponent,
+    RefComponent,
+    ListDirective,
+    TitleDirective,
+    BodyComponent,
   ],
   imports: [
     BrowserModule,
