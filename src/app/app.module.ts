@@ -13,6 +13,11 @@ import {
   TitleDirective,
   BodyComponent,
 } from '../refStuff/refWithDirectives';
+
+import { WebsocketDisplayComponent } from '../websockets/websocket-display.component';
+import { WebsocketService } from '../websockets/websocket.service';
+
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,12 +29,14 @@ import {
     ListDirective,
     TitleDirective,
     BodyComponent,
+    WebsocketDisplayComponent,
   ],
   imports: [
     BrowserModule,
     ReactiveFormsModule,
+    HttpClientModule,
   ],
-  providers: [],
+  providers: [WebsocketService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
