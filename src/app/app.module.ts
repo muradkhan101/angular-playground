@@ -16,7 +16,7 @@ import {
 
 import { WebsocketDisplayComponent } from '../websockets/websocket-display.component';
 import { WebsocketService } from '../websockets/websocket.service';
-
+import { NestedFormComponent } from '../forms/nested-form.component';
 import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
@@ -30,6 +30,7 @@ import { HttpClientModule } from '@angular/common/http';
     TitleDirective,
     BodyComponent,
     WebsocketDisplayComponent,
+    NestedFormComponent,
   ],
   imports: [
     BrowserModule,

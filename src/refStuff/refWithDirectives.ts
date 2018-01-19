@@ -7,7 +7,8 @@ import {
     ContentChild,
     ViewChild,
     QueryList,
-    AfterContentInit
+    AfterContentInit,
+    AfterViewInit,
 } from '@angular/core';
 
 @Directive({selector: 'ng-template[title]'})
@@ -25,20 +26,32 @@ export class ListDirective {
     template:`
     <div class="body">
     <ng-container #title></ng-container>
-    <ng-container #list></ng-container>
+    <ng-container #list *ngFor="let item of listItems">
+        <div> Loop </div>
+        <h1> THE </h1>
+        <h5> Things!</h5>
+    </ng-container>
+    <ng-template #template></ng-template>
     </div>
     `
 })
-export class BodyComponent implements AfterContentInit {
+export class BodyComponent implements AfterContentInit, AfterViewInit {
     @ViewChild('title', {read: ViewContainerRef}) body: ViewContainerRef;
     @ViewChild('list', {read: ViewContainerRef }) list: ViewContainerRef;
+    @ViewChild('template', {read: TemplateRef}) templateC: TemplateRef<any>;
     @ContentChild(TitleDirective) title: TitleDirective;
     @ContentChildren(ListDirective) listItems: QueryList<ListDirective>;
 
     ngAfterContentInit() {
         this.body.createEmbeddedView(this.title.tRef);
-        this.listItems.forEach((item: ListDirective, i) => {
-            this.list.createEmbeddedView(item.tRef);
-        })
+    }
+    ngAfterViewInit() {
+        this.templateC.createEmbeddedView(this.title.tRef);
+        `
+        <div table>
+            <ng-container headers> All the headers would have templateRefs(ng-templates) and the ng-container would have view container
+            <ng-container rows> Same for rows
+        </div>
+        `
     }
 }
