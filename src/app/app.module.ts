@@ -18,6 +18,14 @@ import { WebsocketDisplayComponent } from '../websockets/websocket-display.compo
 import { WebsocketService } from '../websockets/websocket.service';
 import { NestedFormComponent } from '../forms/nested-form.component';
 import { HttpClientModule } from '@angular/common/http';
+
+import { ObservableComponent } from '../observables/observable.component';
+import { ObsFormComponent, FormWatcher } from '../observables/observable-form.component';
+
+import { PromisesComponent } from '../observables/other.component';
+import { ObservableService } from '../observables/observable.service';
+import { OtherService } from '../observables/other.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,13 +39,17 @@ import { HttpClientModule } from '@angular/common/http';
     BodyComponent,
     WebsocketDisplayComponent,
     NestedFormComponent,
+    PromisesComponent,
+    ObservableComponent,
+    ObsFormComponent,
+    FormWatcher
   ],
   imports: [
     BrowserModule,
     ReactiveFormsModule,
     HttpClientModule,
   ],
-  providers: [WebsocketService],
+  providers: [WebsocketService, ObservableService, OtherService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
