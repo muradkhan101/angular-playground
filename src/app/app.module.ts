@@ -26,6 +26,8 @@ import { PromisesComponent } from '../observables/other.component';
 import { ObservableService } from '../observables/observable.service';
 import { OtherService } from '../observables/other.service';
 
+import { AsyncService, AsyncComponent, LateInititalizedComponent } from '../async';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,14 +44,16 @@ import { OtherService } from '../observables/other.service';
     PromisesComponent,
     ObservableComponent,
     ObsFormComponent,
-    FormWatcher
+    FormWatcher,
+    AsyncComponent,
+    LateInititalizedComponent,
   ],
   imports: [
     BrowserModule,
     ReactiveFormsModule,
     HttpClientModule,
   ],
-  providers: [WebsocketService, ObservableService, OtherService],
+  providers: [WebsocketService, ObservableService, OtherService, AsyncService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
