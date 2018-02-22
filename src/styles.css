@@ -1,1 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
+a-table {
+    display: flex;
+    flex-direction: column;
+}
+cell {
+    display: inline-block;
+    width: 160px;
+}
+div {display: inline-block; width: 160px;}
+header-row b { display: inline-block; width: 160px;}

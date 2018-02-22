@@ -38,5 +38,22 @@
 <form-watcher [filter]="filter2"></form-watcher>
 <form-watcher [filter]="filter3"></form-watcher> -->
 
-<async></async>
-<late-async></late-async>
+<!-- <async></async>
+<late-async></late-async> -->
+
+<a-table
+  [data]="data"
+  [dataMap]="map"
+>
+  <ng-container cellCol="key1">
+    <ng-template headerCell><b>Head 1</b></ng-template>
+    <ng-template cellBody let-data><div>{{data}} Wub a dub dub</div></ng-template>
+  </ng-container>
+  <ng-container cellCol="key3">
+    <ng-template headerCell><b>Cid</b></ng-template>
+    <ng-template cellBody let-data><div>{{data}} two 3</div></ng-template>
+  </ng-container>
+  <ng-container cellCol="key2">
+    <ng-template headerCell><b>y so  angular</b></ng-template>
+  </ng-container>
+</a-table>

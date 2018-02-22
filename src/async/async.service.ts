@@ -17,7 +17,7 @@ export class AsyncService {
     async newData() {
         let newData = await this.getDataAsync('Swag swag like Cailou');
         this.subject.next(newData);
-        this._data = newData;
+        // this._data = newData;
     }
 
 

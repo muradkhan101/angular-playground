@@ -27,6 +27,16 @@ import { ObservableService } from '../observables/observable.service';
 import { OtherService } from '../observables/other.service';
 
 import { AsyncService, AsyncComponent, LateInititalizedComponent } from '../async';
+import {
+  Cell,
+  Row,
+  Table,
+  CellHeader,
+  CellDirective,
+  colDef,
+  HeaderCell,
+  HeaderRow
+} from '../tables/base-table';
 
 @NgModule({
   declarations: [
@@ -47,6 +57,14 @@ import { AsyncService, AsyncComponent, LateInititalizedComponent } from '../asyn
     FormWatcher,
     AsyncComponent,
     LateInititalizedComponent,
+    Cell,
+    Table,
+    Row,
+    CellHeader,
+    CellDirective,
+    colDef,
+    HeaderCell,
+    HeaderRow,
   ],
   imports: [
     BrowserModule,
@@ -54,6 +72,12 @@ import { AsyncService, AsyncComponent, LateInititalizedComponent } from '../asyn
     HttpClientModule,
   ],
   providers: [WebsocketService, ObservableService, OtherService, AsyncService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [
+    Cell,
+    Row,
+    HeaderRow,
+    HeaderCell,
+  ]
 })
 export class AppModule { }
