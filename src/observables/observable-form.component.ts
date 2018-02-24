@@ -15,7 +15,7 @@ export class ObsFormComponent implements OnInit {
         
     }
     ngOnInit() {
-        this.obs.formObs = this.input.nativeElement
+        // this.obs.formObs = this.input.nativeElement
     }
 }
 @Component({
@@ -29,6 +29,6 @@ export class FormWatcher implements OnInit {
     formData;
     constructor(private obs: ObservableService) {}
     ngOnInit() {
-        this.obs.formObs.filter(this.filter).subscribe(data => this.formData = data);
+        // this.obs.formObs.filter(this.filter).subscribe(data => this.formData = data);
     }
 }

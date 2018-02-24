@@ -38,6 +38,11 @@ import {
   HeaderRow
 } from '../tables/base-table';
 
+import { StoreModule } from '@ngrx/store';
+import { toDo } from '../store/store.reducers';
+import { EffectsModule } from '@ngrx/effects';
+import { effects } from '../store/store.effects';
+import { TodoComponent } from '../store/todo.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -65,11 +70,14 @@ import {
     colDef,
     HeaderCell,
     HeaderRow,
+    TodoComponent,
   ],
   imports: [
     BrowserModule,
     ReactiveFormsModule,
     HttpClientModule,
+    StoreModule.forRoot({toDo: toDo}),
+    EffectsModule.forRoot(effects)
   ],
   providers: [WebsocketService, ObservableService, OtherService, AsyncService],
   bootstrap: [AppComponent],
