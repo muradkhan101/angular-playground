@@ -17,27 +17,27 @@ export class TodoEffects {
     @Effect()
     add$ = this.action$.pipe(
         ofType(actions.ADD_TODO),
-        mergeMap( action =>
+        mergeMap( (action: any) =>
             (
                 console.log('In add$ effect'),
                 // This creates an infinite loop of calling ADD_TODO effect and reducer
-                Observable.of(action).delay(1500)
+                // Observable.of(action).delay(1500)
                 
                 // Comment top one out and see this works since this effect doesn't create infinite loop
-                // Observable.of({type: 'NEW_TODO', data: action.data}).delay(1500)
+                Observable.of({type: 'NEW_TODO', data: action.data}).delay(1500)
             )
         )
     );
-    @Effect()
-    remove$ = this.action$.pipe(
-        (console.log('Before ofType: delete$'), ofType(actions.REMOVE_TODO)),
-        mergeMap( action =>
-            (
-                console.log('In delete$ effect'),
-                Observable.of(action).delay(1500)
-            )
-        )
-    );
+    // @Effect()
+    // remove$ = this.action$.pipe(
+    //     (console.log('Before ofType: delete$'), ofType(actions.REMOVE_TODO)),
+    //     mergeMap( action =>
+    //         (
+    //             console.log('In delete$ effect'),
+    //             Observable.of(action).delay(1500)
+    //         )
+    //     )
+    // );
 }
 
 export const effects = [ TodoEffects ];

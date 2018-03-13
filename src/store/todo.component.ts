@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs/Observable';
-import { ToDo, ADD_TODO } from '../store/store.reducers';
+import { ToDo, ADD_TODO, REMOVE_TODO } from '../store/store.reducers';
 @Component({
     selector: 'to-dos',
     template: `
@@ -9,6 +9,7 @@ import { ToDo, ADD_TODO } from '../store/store.reducers';
             <div class='todo' *ngFor="let todo of (todos | async)">
                 <h1> {{todo.id}} </h1>
                 <h4> {{todo.task}}</h4>
+                <button (click)="removeTodo(todo.id)">Remove It</button>
             </div>
         </div>
         <div class='new-todo'>
@@ -29,5 +30,8 @@ export class TodoComponent implements OnInit {
     addTodo(input) {
         this.store.dispatch({type: ADD_TODO, data: {id: this.idCount++, task: input.value}});
         input.value = '';
+    }
+    removeTodo(id) {
+        this.store.dispatch({type: REMOVE_TODO, data: {id: parseInt(id, 10)} });
     }
 }
