@@ -38,6 +38,14 @@ import {
   HeaderRow
 } from '../tables/base-table';
 
+import {
+  BodyCellDirective,
+  DynamicTable,
+  HeaderCellDirective,
+  HeaderRowTemplate,
+  RowTemplate,
+} from '../dynamic-table/new-table';
+
 import { StoreModule } from '@ngrx/store';
 import { toDo } from '../store/store.reducers';
 import { EffectsModule } from '@ngrx/effects';
@@ -71,6 +79,11 @@ import { TodoComponent } from '../store/todo.component';
     HeaderCell,
     HeaderRow,
     TodoComponent,
+    BodyCellDirective,
+    HeaderCellDirective,
+    RowTemplate,
+    HeaderRowTemplate,
+    DynamicTable
   ],
   imports: [
     BrowserModule,
@@ -86,6 +99,8 @@ import { TodoComponent } from '../store/todo.component';
     Row,
     HeaderRow,
     HeaderCell,
+    RowTemplate,
+    HeaderRowTemplate,
   ]
 })
 export class AppModule { }

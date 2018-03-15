@@ -43,4 +43,22 @@ export class AppComponent {
     }
   ];
   dataMap = { 'key1': 1 };
+
+  tableData = {
+    headers: ['One', 'Two', 'Three'],
+    rows: [
+      {
+        name: 'Potato',
+        data: [1, 2, 3],
+      },
+      {
+        name: 'Tomato',
+        data: [4, 5, 6],
+      },
+      {
+        name: 'French Fry',
+        data: [7, 8, 9]
+      }
+    ]
+  }
 }
