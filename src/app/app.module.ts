@@ -51,6 +51,8 @@ import { toDo } from '../store/store.reducers';
 import { EffectsModule } from '@ngrx/effects';
 import { effects } from '../store/store.effects';
 import { TodoComponent } from '../store/todo.component';
+import { CanvasMapComponent } from '../canvas-map/canvas-map.component';
+import { AgmCoreModule } from '@agm/core';
 @NgModule({
   declarations: [
     AppComponent,
@@ -83,14 +85,16 @@ import { TodoComponent } from '../store/todo.component';
     HeaderCellDirective,
     RowTemplate,
     HeaderRowTemplate,
-    DynamicTable
+    DynamicTable,
+    CanvasMapComponent
   ],
   imports: [
     BrowserModule,
     ReactiveFormsModule,
     HttpClientModule,
     StoreModule.forRoot({toDo: toDo}),
-    EffectsModule.forRoot(effects)
+    EffectsModule.forRoot(effects),
+    AgmCoreModule.forRoot({ apiKey: 'AIzaSyCGSBIO0mqqVSvOBQkGPw2CeeMNjPitykI'}),
   ],
   providers: [WebsocketService, ObservableService, OtherService, AsyncService],
   bootstrap: [AppComponent],

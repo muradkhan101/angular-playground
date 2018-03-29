@@ -68,8 +68,8 @@ export class DTableComponent implements OnChanges {
                 });
                 let bodyElem = bodyRow.rootNodes[0] as HTMLElement;
                 row.data.forEach( (datum, j) => {
-                    this.bodyOutlet.
-                })
+                    this.bodyOutlet
+                });
             })
         }
     }
