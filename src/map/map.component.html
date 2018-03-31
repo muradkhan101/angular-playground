@@ -1,0 +1,22 @@
+<input #selector >
+<button (click)="selected = selector.value">Select</button>
+<agm-map
+  [latitude]="coords.lat"
+  [longitude]="coords.lon">
+  <agm-marker *ngFor="let m of markers; let i = index;"
+    [latitude]="m.lat"
+    [longitude]="m.lon"
+    [iconUrl]="getMarker(m)"
+    (markerClick)="selected = m.id">
+  </agm-marker>
+</agm-map>
+<table>
+  <tr>
+    <th>Id</th>
+    <th>Name</th>
+  </tr>
+  <tr *ngFor="let e of employees" (click)="selected = e.id" [ngClass]="{selected: e.id == selected}">
+    <td>{{e.id}}</td>
+    <td>{{e.name}}</td>
+  </tr>
+</table>

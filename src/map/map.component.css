@@ -1,0 +1,6 @@
+:host agm-map {
+    height: 90vh;
+}
+.selected {
+    background: rgb(200, 200, 200);
+}
