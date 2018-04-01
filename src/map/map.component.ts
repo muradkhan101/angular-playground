@@ -100,30 +100,44 @@ export class MapComponent implements OnInit {
     {
       name: 'Bobby Bob',
       id: 1,
+      city: 'Town',
+      color: 'Blue'
     },
     {
       name: 'Tina Turner',
       id: 2,
+      city: 'Country',
+      color: 'Green'
     },
     {
       name: 'Todd Terje',
       id: 3,
+      city: 'Village',
+      color: 'Red'
     },
     {
       name: 'Mike Milligah',
-      id: 4
+      id: 4,
+      city: 'Park',
+      color: 'Orange'
     },
     {
       name: 'Georgie Porgie',
-      id: 5
+      id: 5,
+      city: 'City State',
+      color: 'turquoise'
     },
     {
       name: 'Lina Looper',
       id: 6,
+      city: 'Tribe',
+      color: 'navy'
     },
     {
       name: 'Yuna Yoohoo',
-      id: 7
+      id: 7,
+      city: 'Continent',
+      color: 'emerald'
     }
   ]
   constructor() { }

@@ -1,18 +1,17 @@
 .table {
-    display: flex;
+    display: table;
     flex-direction: column;
     width: 400px;
 }
 .header-cell, .body-cell {
-    width: 80px;
-    text-overflow: ellipsis;
+    display: table-cell;
     padding: 4px 8px;
 }
 .header-cell {
     font-weight: bold;
 }
 .table-row {
-    display: flex;
+    display: table-row;
     width: 100%;
 }
 .body-cell {

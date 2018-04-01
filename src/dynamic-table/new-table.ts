@@ -75,12 +75,8 @@ export class HeaderRowTemplate extends RowBase {}
         <div class="body-cell">{{ text }}<br>row:{{row}}<br>column:{{column}}</div>
     </ng-template>
     <div class="table">
-        <div class="header-row">
-            <ng-container #headerOutlet></ng-container>
-        </div>
-        <div class="body-rows">
-            <ng-container #bodyOutlet></ng-container>
-        </div>
+        <ng-container #headerOutlet></ng-container>
+        <ng-container #bodyOutlet></ng-container>
     </div>
     `,
     encapsulation: 2,
