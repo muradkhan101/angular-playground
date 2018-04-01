@@ -1,5 +1,9 @@
 :host agm-map {
     height: 90vh;
+    animation: height 0.5s ease-in;
+}
+:host agm-map.large {
+    height: 50vh;
 }
 .selected {
     background: rgb(200, 200, 200);

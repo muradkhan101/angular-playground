@@ -1,12 +1,29 @@
 import { Component, OnInit } from '@angular/core';
 
+import {
+  trigger,
+  state,
+  style,
+  animate,
+  transition
+} from '@angular/animations';
+
 @Component({
   selector: 'app-map',
   templateUrl: './map.component.html',
-  styleUrls: ['./map.component.css']
+  styleUrls: ['./map.component.css'],
+  animations: [
+    trigger('mapSize', [
+      state('false', style({ height: '90vh'})),
+      state('true', style({height: '50vh'})),
+      transition('false => true', animate('500ms ease-in')),
+      transition('true => false', animate('500ms ease-out'))
+    ])
+  ]
 })
 export class MapComponent implements OnInit {
   selected = undefined;
+  large = false;
   coords = {
     lon: 7.815982,
     lat: 51.673858,

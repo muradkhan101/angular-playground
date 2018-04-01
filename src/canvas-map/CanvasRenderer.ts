@@ -29,7 +29,6 @@ export class CanvasRenderer {
                 this.ctx.drawImage(image, dx, dy);
                 return this.canvas.toDataURL();
             });
-            console.log(base64);
         return base64;
     }
     drawProfile(url, scale = 0, dx = 0, dy = 0, ) {

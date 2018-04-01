@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
 import { RepeatComponent } from './repeat.component';
@@ -53,6 +54,7 @@ import { effects } from '../store/store.effects';
 import { TodoComponent } from '../store/todo.component';
 import { CanvasMapComponent } from '../canvas-map/canvas-map.component';
 import { AgmCoreModule } from '@agm/core';
+import { MapComponent } from '../map/map.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -86,10 +88,12 @@ import { AgmCoreModule } from '@agm/core';
     RowTemplate,
     HeaderRowTemplate,
     DynamicTable,
-    CanvasMapComponent
+    CanvasMapComponent,
+    MapComponent
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     ReactiveFormsModule,
     HttpClientModule,
     StoreModule.forRoot({toDo: toDo}),
