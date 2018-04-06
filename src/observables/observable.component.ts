@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, HostListener } from '@angular/core';
 import { ObservableService } from './observable.service';
 import * as Rx from 'rxjs';
 
@@ -10,10 +10,31 @@ import * as Rx from 'rxjs';
     `,
 })
 export class ObservableComponent {
+    o;
+    obs: Rx.Observable<any> = Rx.Observable.create((obs) => {
+        this.o = obs;
+        obs.next(1);
+    });
+    // IIFE doesnt work on host listener
+    // (() => {
+    //     let o;
+    //     this.obs = Rx.Observable.create( (obs) => {
+    //         o = obs;
+    //     });
+    //     return function(e) {
+    //         o.next(e);
+    //         this.count++;
+    //     };
+    // })(event)
     @Input() multiplier: number;
-    count;
+    
+    count = 0;
     subscription: Rx.Subscription;
-    constructor(private obs: ObservableService) {
-        this.subscription = obs.observable.map(val => val * this.multiplier).subscribe(val => this.count = val)
+    constructor(private ob: ObservableService) {
+        // this.subscription = o.observable.map(val => val * this.multiplier).subscribe(val => this.count = val)
+        this.obs.subscribe(() => this.count++);
     } 
+    @HostListener('click', ['$event']) c(e) {
+        this.o.next(1);
+    }
 }
