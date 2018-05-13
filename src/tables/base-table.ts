@@ -3,6 +3,7 @@ import {
     Component,
     ComponentFactoryResolver,
     Directive,
+    HostBinding,
     Input,
     TemplateRef,
     ViewChild,
@@ -11,11 +12,15 @@ import {
     ContentChildren,
     QueryList,
 } from '@angular/core';
-@Directive({ selector: 'ng-template[headerCell]'})
+@Directive({
+    selector: 'ng-template[headerCell]',
+})
 export class CellHeader {
     constructor(public tref: TemplateRef<any>) {}
 }
-@Directive({ selector: 'ng-template[cellBody]' })
+@Directive({
+    selector: 'ng-template[cellBody]'
+})
 export class CellDirective {
     constructor(public tRef: TemplateRef<any>) {}
 }
@@ -27,7 +32,8 @@ export class colDef {
 }
 @Component({
     selector: 'header-cell',
-    template: '<b>{{data}}</b>'
+    template: '<b>{{data}}</b>',
+    styles: [`:host { display: table-cell; }`]
 })
 export class HeaderCell {
     data;
@@ -35,6 +41,7 @@ export class HeaderCell {
 @Component({
     selector: 'cell',
     template: `{{data}}`,
+    styles: [`:host { display: table-cell; }`]
 })
 export class Cell {
     data;
@@ -42,7 +49,8 @@ export class Cell {
 
 @Component({
     selector: 'header-row',
-    template: `<ng-container #headerOutlet></ng-container>`
+    template: `<ng-container #headerOutlet></ng-container>`,
+    styleUrls: ['./table.scss']
 })
 export class HeaderRow {
     @ViewChild('headerOutlet', { read: ViewContainerRef }) headerOutlet: ViewContainerRef;
@@ -50,7 +58,8 @@ export class HeaderRow {
 }
 @Component({
     selector: 'row',
-    template: `<ng-container #rowOutlet></ng-container>`
+    template: `<ng-container #rowOutlet></ng-container>`,
+    styleUrls: ['./table.scss']
 })
 export class Row {
     @ViewChild('rowOutlet', { read: ViewContainerRef }) rowOutlet: ViewContainerRef;
@@ -58,7 +67,8 @@ export class Row {
 
 @Component({
     selector: 'a-table',
-    template: '<div #tableOutlet></div>'
+    template: '<ng-container #tableOutlet></ng-container>',
+    styles: [`:host { display: table; }`]
 })
 export class Table implements AfterContentInit {
     @ViewChild('tableOutlet', { read: ViewContainerRef }) tableOutlet: ViewContainerRef;
@@ -79,8 +89,7 @@ export class Table implements AfterContentInit {
                     let cellFactory = this.cfr.resolveComponentFactory(Cell);
                     let newCell = newRow.instance.rowOutlet.createComponent(cellFactory);
                     newCell.instance.data = data[col.cellCol];
-                }
-                
+                }   
             })
         })
         // this.data.forEach( (data, i) => {
@@ -98,6 +107,6 @@ export class Table implements AfterContentInit {
             console.log(col, col.header);
             headerRow.instance.headerOutlet.createEmbeddedView(col.header);
         })
-            }
-        }
+    }
+}
         

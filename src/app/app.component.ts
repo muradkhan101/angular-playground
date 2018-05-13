@@ -42,7 +42,6 @@ export class AppComponent {
       'key3': 'Trance'
     }
   ];
-  dataMap = { 'key1': 1 };
 
   tableData = {
     headers: ['One', 'Two', 'Three'],
