@@ -3,6 +3,7 @@ import {
     Component,
     ComponentFactoryResolver,
     Directive,
+    ElementRef,
     HostBinding,
     Input,
     TemplateRef,
@@ -12,58 +13,9 @@ import {
     ContentChildren,
     QueryList,
 } from '@angular/core';
-@Directive({
-    selector: 'ng-template[headerCell]',
-})
-export class CellHeader {
-    constructor(public tref: TemplateRef<any>) {}
-}
-@Directive({
-    selector: 'ng-template[cellBody]'
-})
-export class CellDirective {
-    constructor(public tRef: TemplateRef<any>) {}
-}
-@Directive({ selector: 'ng-container[cellCol]'})
-export class colDef {
-    @Input() cellCol;
-    @ContentChild(CellHeader, { read: TemplateRef }) header;
-    @ContentChild(CellDirective, {read: TemplateRef}) body;
-}
-@Component({
-    selector: 'header-cell',
-    template: '<b>{{data}}</b>',
-    styles: [`:host { display: table-cell; }`]
-})
-export class HeaderCell {
-    data;
-}
-@Component({
-    selector: 'cell',
-    template: `{{data}}`,
-    styles: [`:host { display: table-cell; }`]
-})
-export class Cell {
-    data;
-}
 
-@Component({
-    selector: 'header-row',
-    template: `<ng-container #headerOutlet></ng-container>`,
-    styleUrls: ['./table.scss']
-})
-export class HeaderRow {
-    @ViewChild('headerOutlet', { read: ViewContainerRef }) headerOutlet: ViewContainerRef;
-
-}
-@Component({
-    selector: 'row',
-    template: `<ng-container #rowOutlet></ng-container>`,
-    styleUrls: ['./table.scss']
-})
-export class Row {
-    @ViewChild('rowOutlet', { read: ViewContainerRef }) rowOutlet: ViewContainerRef;
-}
+import { Cell } from './cell';
+import { colDef, HeaderRow, Row } from './row';
 
 @Component({
     selector: 'a-table',

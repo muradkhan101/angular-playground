@@ -45,15 +45,15 @@
   [data]="data"
 >
   <ng-container cellCol="key1">
-    <ng-template headerCell><b>Head 1</b></ng-template>
-    <ng-template cellBody let-data><div>{{data}}</div></ng-template>
+    <table-header-cell *headerCell>Head 1</table-header-cell>
+    <table-cell *cellBody="let data">{{data}}</table-cell>
   </ng-container>
   <ng-container cellCol="key3">
-    <ng-template headerCell><b>Cid</b></ng-template>
-    <ng-template cellBody let-data><div>{{data}}</div></ng-template>
+    <table-header-cell *headerCell>Cid</table-header-cell>
+    <table-cell *cellBody="let data"><div>{{data}}</div></table-cell>
   </ng-container>
   <ng-container cellCol="key2">
-    <ng-template headerCell><b>y so  angular</b></ng-template>
+    <table-header-cell *headerCell><b>y so  angular</b></table-header-cell>
   </ng-container>
 </a-table>
 

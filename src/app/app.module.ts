@@ -36,8 +36,10 @@ import {
   CellDirective,
   colDef,
   HeaderCell,
-  HeaderRow
-} from '../tables/base-table';
+  HeaderRow,
+  TableCell,
+  TableHeaderCell,
+} from '../tables';
 
 import {
   BodyCellDirective,
@@ -89,7 +91,9 @@ import { MapComponent } from '../map/map.component';
     HeaderRowTemplate,
     DynamicTable,
     CanvasMapComponent,
-    MapComponent
+    MapComponent,
+    TableCell,
+    TableHeaderCell,
   ],
   imports: [
     BrowserModule,
@@ -109,6 +113,8 @@ import { MapComponent } from '../map/map.component';
     HeaderCell,
     RowTemplate,
     HeaderRowTemplate,
+    TableCell,
+    TableHeaderCell,
   ]
 })
 export class AppModule { }
