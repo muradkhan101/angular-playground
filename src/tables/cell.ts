@@ -10,7 +10,12 @@ import {
     host: {
         'class': 'ins-table-cell',
         'role': 'gridcell'
-    }
+    },
+    styles: [
+        `:host {
+            padding: 8px 12px;
+        }`
+    ]
 })
 export class TableCell {
     constructor(public elementRef: ElementRef) { }
@@ -22,7 +27,13 @@ export class TableCell {
     host: {
         'class': 'ins-header-cell',
         'role': 'columnheader'
-    }
+    },
+    styles: [
+        `:host {
+            padding: 8px 12px;
+            font-weight: bold;
+        }`
+    ]
 })
 export class TableHeaderCell {
     constructor(public elementRef: ElementRef) { }

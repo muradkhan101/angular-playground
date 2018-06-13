@@ -45,15 +45,24 @@
   [data]="data"
 >
   <ng-container cellCol="key1">
-    <table-header-cell *headerCell>Head 1</table-header-cell>
+    <table-header-cell *headerCell>Age</table-header-cell>
     <table-cell *cellBody="let data">{{data}}</table-cell>
   </ng-container>
   <ng-container cellCol="key3">
-    <table-header-cell *headerCell>Cid</table-header-cell>
-    <table-cell *cellBody="let data"><div>{{data}}</div></table-cell>
+    <table-header-cell *headerCell>Favorite color</table-header-cell>
+    <table-cell *cellBody="let data">{{data}}</table-cell>
   </ng-container>
   <ng-container cellCol="key2">
-    <table-header-cell *headerCell><b>y so  angular</b></table-header-cell>
+    <table-header-cell *headerCell>Company</table-header-cell>
+    <table-cell *cellBody="let data">{{data}}</table-cell>
+  </ng-container>
+  <ng-container cellCol="key4">
+    <table-header-cell *headerCell>Phone Number</table-header-cell>
+    <table-cell *cellBody="let data">{{data}}</table-cell>
+  </ng-container>
+  <ng-container cellCol="key5">
+    <table-header-cell *headerCell>Favorite Fruit</table-header-cell>
+    <table-cell *cellBody="let data">{{data}}</table-cell>
   </ng-container>
 </a-table>
 
