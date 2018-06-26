@@ -32,10 +32,10 @@ export class AppComponent {
 
     // Works! sends out both each time a new thing comes out from either
     // and and both have a value
-    rx.Observable.combineLatest(
-      rx.Observable.interval(250).scan((acc, val) => acc + 2, 1),
-      rx.Observable.interval(400).scan((acc, val) => acc + 2, 0)
-    ).subscribe(val => console.log(val));
+    // rx.Observable.combineLatest(
+    //   rx.Observable.interval(250).scan((acc, val) => acc + 2, 1),
+    //   rx.Observable.interval(400).scan((acc, val) => acc + 2, 0)
+    // ).subscribe(val => console.log(val));
   }
   data = [
     {

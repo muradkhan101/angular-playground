@@ -1,0 +1,15 @@
+<left-arrow
+  *ngIf="container.scrollLeft > 0"
+  (click)="scroll('left')">
+  <chevron></chevron>
+</left-arrow>
+<scroll-container #container>
+  <scroll-content #content>
+    <ng-content></ng-content>
+  </scroll-content>
+</scroll-container>
+<right-arrow
+  *ngIf="content.offsetWidth > (container.scrollLeft + container.offsetWidth + 75)"
+  (click)="scroll('right')">
+  <chevron class="right"></chevron>
+</right-arrow>

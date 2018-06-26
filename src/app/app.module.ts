@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -57,6 +57,7 @@ import { TodoComponent } from '../store/todo.component';
 import { CanvasMapComponent } from '../canvas-map/canvas-map.component';
 import { AgmCoreModule } from '@agm/core';
 import { MapComponent } from '../map/map.component';
+import { SideScrollerComponent } from './side-scroller/side-scroller.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -94,6 +95,7 @@ import { MapComponent } from '../map/map.component';
     MapComponent,
     TableCell,
     TableHeaderCell,
+    SideScrollerComponent,
   ],
   imports: [
     BrowserModule,
@@ -106,6 +108,9 @@ import { MapComponent } from '../map/map.component';
   ],
   providers: [WebsocketService, ObservableService, OtherService, AsyncService],
   bootstrap: [AppComponent],
+  schemas: [
+    NO_ERRORS_SCHEMA
+  ],
   entryComponents: [
     Cell,
     Row,
