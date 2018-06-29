@@ -56,8 +56,11 @@ import { effects } from '../store/store.effects';
 import { TodoComponent } from '../store/todo.component';
 import { CanvasMapComponent } from '../canvas-map/canvas-map.component';
 import { AgmCoreModule } from '@agm/core';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { MapComponent } from '../map/map.component';
 import { SideScrollerComponent } from './side-scroller/side-scroller.component';
+
+import { DatePillPickerModule } from './date-pill-picker/date-pill-picker.module';
 @NgModule({
   declarations: [
     AppComponent,
@@ -105,6 +108,8 @@ import { SideScrollerComponent } from './side-scroller/side-scroller.component';
     StoreModule.forRoot({toDo: toDo}),
     EffectsModule.forRoot(effects),
     AgmCoreModule.forRoot({ apiKey: 'AIzaSyCGSBIO0mqqVSvOBQkGPw2CeeMNjPitykI'}),
+    NgbModule.forRoot(),
+    DatePillPickerModule
   ],
   providers: [WebsocketService, ObservableService, OtherService, AsyncService],
   bootstrap: [AppComponent],

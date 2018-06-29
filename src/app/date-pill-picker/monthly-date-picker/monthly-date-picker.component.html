@@ -1,0 +1,12 @@
+<div class="daily-date-picker">
+    <a href="javascript:void(0);" class="prev-month float-left" (click)="prevMonth($event)">
+        <i class="zmdi zmdi-caret-left zmdi-hc-2x"></i>
+    </a>
+    <span class="text-uppercase">
+        <i [style.marginRight]="'4px'" class="zmdi zmdi-calendar-alt"></i>
+        {{currentDate | date: 'MMMM yyyy':'UTC/GMT'}}
+    </span>
+    <a href="javascript:void(0);" class="next-month float-right" (click)="nextMonth($event)" >
+        <i class="zmdi zmdi-caret-right zmdi-hc-2x"></i>
+    </a>
+</div>

@@ -1,0 +1,25 @@
+
+.daily-date-picker {
+    display: flex;
+    justify-content: space-evenly;
+    overflow: hidden;
+    top: 0;
+    right: 0;
+    height: 29px;
+    position: relative;
+    font-size: 0.857rem;
+    font-weight: 600;
+    background: #00afd1;
+    width: 100%;
+    line-height: 29px;
+    border-radius: 2px;
+    color: #ffffff;
+    span { text-align: center; }
+    >a{
+        display: flex;
+        align-items: center;
+        background: #00afd1;
+        color: white;
+        padding: 0 10px;
+    }
+}

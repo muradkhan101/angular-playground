@@ -1,0 +1,38 @@
+.content-wrapper {
+    padding: 12px 8px;
+}
+.modal-header {
+    border: none;
+    padding-bottom: 0;
+    flex-direction: column;
+    p { font-size: 14px; margin-top: 16px; }
+    * { align-self: end; }
+}
+.item-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.quick-selects { margin-top: 24px; }
+.label {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+.month-range,
+.pill-item {
+    width: 45%;
+}
+.pill-item {
+    padding: 8px 24px;
+    margin-bottom: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 13px;
+    text-transform: uppercase;
+
+    &.selected {
+        color: white;
+        background-color: #9FC72D;
+    }
+}

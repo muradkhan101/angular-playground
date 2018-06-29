@@ -27,5 +27,20 @@ export class SideScrollerComponent implements AfterContentInit {
       direction === 'right'
         ? scroll + this.scrollAmount
         : scroll - this.scrollAmount;
+    // console.log(this.firstComponentOutOfView(direction));
   }
+  // firstComponentOutOfView(direction) {
+  //   let children: Array<HTMLElement> = Array.from(this.content.nativeElement.children);
+  //   for (let i = 0; i < children.length; i++) {
+  //     let child: HTMLElement = children[i];
+  //     if (direction === 'left'
+  //         && child.offsetLeft < this.container.scrollLeft) {
+  //           return child;
+  //       }
+  //     if (direction === 'right'
+  //         && child.offsetLeft > this.container.scrollLeft + this.container.offsetWidth) {
+  //           return child
+  //       }
+  //   }
+  // }
 }
