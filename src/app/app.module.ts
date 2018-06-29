@@ -105,11 +105,11 @@ import { DatePillPickerModule } from './date-pill-picker/date-pill-picker.modul
     BrowserAnimationsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    DatePillPickerModule,
     StoreModule.forRoot({toDo: toDo}),
     EffectsModule.forRoot(effects),
     AgmCoreModule.forRoot({ apiKey: 'AIzaSyCGSBIO0mqqVSvOBQkGPw2CeeMNjPitykI'}),
     NgbModule.forRoot(),
-    DatePillPickerModule
   ],
   providers: [WebsocketService, ObservableService, OtherService, AsyncService],
   bootstrap: [AppComponent],

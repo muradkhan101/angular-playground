@@ -17,6 +17,7 @@ export class DatePickerModalComponent {
   ) { }
 
   updateRange(type: 'startDate' | 'endDate', date: string) {
+    this.selectedRange = undefined;
     this.dateRange[type] = date;
   }
 

@@ -11,7 +11,7 @@
         </div>
         <month-picker
           [refDate]="dateRange.startDate"
-          [align]="start"
+          [alignTime]="start"
           (date)="updateRange('startDate', $event)"></month-picker>
       </div>
       <div class="month-range">
@@ -20,7 +20,7 @@
         </div>
         <month-picker
           [refDate]="dateRange.endDate"
-          [align]="end"
+          [alignTime]="end"
           (date)="updateRange('endDate', $event)"></month-picker>
       </div>
     </div>
