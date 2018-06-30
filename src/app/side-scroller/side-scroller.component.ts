@@ -6,27 +6,36 @@ import {
 } from '@angular/core';
 
 @Component({
-  selector: 'app-side-scroller',
+  selector: 'side-scroller',
   templateUrl: './side-scroller.component.html',
   styleUrls: ['./side-scroller.component.scss']
 })
 export class SideScrollerComponent implements AfterContentInit {
   @ViewChild('container') container;
   @ViewChild('content') content;
-  @Input() scrollAmount = 150;
+  @Input() scrollAmount = 320;
+  // Space between each item
+  @Input() itemMargin = 0;
+  // Tracks number of times scroll has been clicked
+  // Used to know which child to scroll to
+  scrollPos = 0;
   constructor() { }
-
+  parseInt = (num: string) => parseInt(num) || 0;
   ngAfterContentInit() {
     let height = this.content.nativeElement.clientHeight;
     this.container.nativeElement.style.height = `${height}px`;
   }
 
   scroll(direction) {
-    let scroll = this.container.nativeElement.scrollLeft;
-    this.container.nativeElement.scrollLeft =
+
+    let scroll = parseInt(this.content.nativeElement.style.left) || 0;
+    let children = this.content.nativeElement.children;
+    let index = direction === 'right' ? this.scrollPos : this.scrollPos -1;
+    let scrollAmount = children[index].offsetWidth + this.itemMargin;
+    this.content.nativeElement.style.left =
       direction === 'right'
-        ? scroll + this.scrollAmount
-        : scroll - this.scrollAmount;
+        ? (this.scrollPos++, scroll - scrollAmount + 'px')
+        : (this.scrollPos--, scroll + scrollAmount + 'px');
     // console.log(this.firstComponentOutOfView(direction));
   }
   // firstComponentOutOfView(direction) {

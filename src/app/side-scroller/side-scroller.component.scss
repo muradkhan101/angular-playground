@@ -10,6 +10,7 @@ scroll-container {
 scroll-content {
     display: flex;
     position: absolute;
+    transition: left 0.3s ease-in;
 }
 left-arrow,
 right-arrow {
