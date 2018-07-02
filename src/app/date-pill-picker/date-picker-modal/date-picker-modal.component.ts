@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { IDateRange } from '../shared/interfaces';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import * as moment from 'moment';
-
+import { adjustForTz } from '../shared/helpers';
 
 @Component({
   selector: 'date-picker-modal',
@@ -24,8 +24,8 @@ export class DatePickerModalComponent {
   setTime(duration: number) {
     this.selectedRange = duration;
     this.dateRange = {
-      startDate: moment().subtract(duration, 'months').startOf('month').toISOString(),
-      endDate: moment().endOf('month').toISOString()
+      startDate: adjustForTz( moment().subtract(duration, 'months').startOf('month') ).toISOString(),
+      endDate: adjustForTz( moment().endOf('month') ).toISOString()
     }
   }
   submit() {

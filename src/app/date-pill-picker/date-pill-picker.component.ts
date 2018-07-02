@@ -30,13 +30,13 @@ export class DatePillPickerComponent implements OnInit {
     this.calculateTimeDiff();
   }
   calculateTimeDiff() {
-    this.timeDiff = moment(this.dateRange.endDate).diff(this.dateRange.startDate, 'months');
+    this.timeDiff = moment(this.dateRange.endDate).startOf('month').diff(this.dateRange.startDate, 'months');
   }
   openModal() {
     let modalRef = this.modal.open(DatePickerModalComponent);
     modalRef.componentInstance.dateRange = this.dateRange; 
     modalRef.result.then(dateRange => {
-      this.dateRange = dateRange
+      this.dateRange = dateRange;
       this.calculateTimeDiff();
     });
   }
