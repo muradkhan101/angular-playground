@@ -105,3 +105,5 @@
   [time]="3"
   color="#246321"
 ></date-pill-picker>
+
+{{(time | async) | date:'h:mm:ss'}}

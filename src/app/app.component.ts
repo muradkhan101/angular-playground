@@ -17,6 +17,7 @@ export class AppComponent {
   //   {topic: 'Header1', body: 'body1', footer: 'footer1'},
   //   {topic: 'Topic1', body: 'body2', footer: 'footer2'},
   // ]
+  time = rx.Observable.interval(1000).scan( (acc, curr) => acc + 1000, new Date(1000 * 60 * 60 * 24 * 30.123).getTime() )
   constructor() {
     // Sends them separately
     // rx.Observable.merge(
