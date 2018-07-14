@@ -38,6 +38,75 @@ export class AppComponent {
     //   rx.Observable.interval(400).scan((acc, val) => acc + 2, 0)
     // ).subscribe(val => console.log(val));
   }
+
+  treeData = {
+    children: [
+      {
+        value: 'ß',
+        title: 'Beta',
+        children: [
+          {
+            children: [
+              {
+                value: 'ß',
+                title: 'Beta',
+                children: []
+              },
+              {
+                value: '√',
+                title: 'Divide',
+                children: [
+                  {
+                    children: [
+                      {
+                        value: 'ß',
+                        title: 'Beta',
+                        children: []
+                      },
+                      {
+                        value: '√',
+                        title: 'Divide',
+                        children: []
+                      }
+                    ],
+                    value: '∏',
+                    title: 'Paragraph'
+                  }
+                ]
+              }
+            ],
+            value: '∏',
+            title: 'Paragraph'
+          }
+        ]
+      },
+      {
+        value: '√',
+        title: 'Divide',
+        children: [
+          {
+            children: [
+              {
+                value: 'ß',
+                title: 'Beta',
+                children: []
+              },
+              {
+                value: '√',
+                title: 'Divide',
+                children: []
+              }
+            ],
+            value: '∏',
+            title: 'Paragraph'
+          }
+        ]
+      }
+    ],
+    value: '∏',
+    title: 'Paragraph'
+  }
+
   data = [
     {
       "key1": 40,
