@@ -1,0 +1,41 @@
+:root {
+    --child-width: 250px;
+}
+
+:host {
+    display: flex;
+    flex-grow: 1;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+    text-align: center;
+    &::after, &::before {
+        content: '';
+        position: absolute;
+        border: 1px solid black;
+    }
+    &::after {
+        bottom: 0;
+        left: calc(250px / 2);
+        width: calc(100% - 250px);
+    }
+    &::before {
+        left: 50%;
+        top: -20px;
+        height: 24px;
+        width: 1px;
+    }
+}
+.title {
+    padding: 8px 4px;
+    width: 250px;
+    margin: 0 auto;
+}
+.value {
+    font-size: 32px;
+    margin: 0 auto;
+}
+.children {
+    display: flex;
+    justify-content: space-between;
+}
