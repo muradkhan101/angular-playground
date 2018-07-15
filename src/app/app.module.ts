@@ -61,6 +61,7 @@ import { MapComponent } from '../map/map.component';
 import { SideScrollerComponent } from './side-scroller/side-scroller.component';
 
 import { DatePillPickerModule } from './date-pill-picker/date-pill-picker.module';
+import { TimeDurationPipe } from './time-duration.pipe';
 @NgModule({
   declarations: [
     AppComponent,
@@ -99,6 +100,7 @@ import { DatePillPickerModule } from './date-pill-picker/date-pill-picker.modul
     TableCell,
     TableHeaderCell,
     SideScrollerComponent,
+    TimeDurationPipe,
   ],
   imports: [
     BrowserModule,
