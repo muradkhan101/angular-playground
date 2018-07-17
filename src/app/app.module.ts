@@ -62,6 +62,8 @@ import { SideScrollerComponent } from './side-scroller/side-scroller.component';
 
 import { DatePillPickerModule } from './date-pill-picker/date-pill-picker.module';
 import { GraphNodeComponent, EfficientTreeComponent } from '../graph';
+import { TimeDurationPipe } from './time-duration.pipe';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -100,6 +102,7 @@ import { GraphNodeComponent, EfficientTreeComponent } from '../graph';
     TableCell,
     TableHeaderCell,
     SideScrollerComponent,
+    TimeDurationPipe,
     GraphNodeComponent,
     EfficientTreeComponent,
   ],
