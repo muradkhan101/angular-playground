@@ -70,7 +70,7 @@ export class AppComponent {
                       }
                     ],
                     value: '∏',
-                    title: 'Paragraph'
+                    title: 'Paragraph',
                   }
                 ]
               }

@@ -61,7 +61,7 @@ import { MapComponent } from '../map/map.component';
 import { SideScrollerComponent } from './side-scroller/side-scroller.component';
 
 import { DatePillPickerModule } from './date-pill-picker/date-pill-picker.module';
-import { GraphNodeComponent } from '../graph/node.component';
+import { GraphNodeComponent, EfficientTreeComponent } from '../graph';
 @NgModule({
   declarations: [
     AppComponent,
@@ -101,6 +101,7 @@ import { GraphNodeComponent } from '../graph/node.component';
     TableHeaderCell,
     SideScrollerComponent,
     GraphNodeComponent,
+    EfficientTreeComponent,
   ],
   imports: [
     BrowserModule,
@@ -128,6 +129,7 @@ import { GraphNodeComponent } from '../graph/node.component';
     TableCell,
     TableHeaderCell,
     GraphNodeComponent,
+    EfficientTreeComponent,
   ]
 })
 export class AppModule { }
