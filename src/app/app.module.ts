@@ -63,7 +63,12 @@ import { SideScrollerComponent } from './side-scroller/side-scroller.component';
 import { DatePillPickerModule } from './date-pill-picker/date-pill-picker.module';
 import { GraphNodeComponent, EfficientTreeComponent } from '../graph';
 import { TimeDurationPipe } from './time-duration.pipe';
-import { FlexGraphComponent } from '../flex-graph/flex-graph.component';
+import {
+  FlexGraphComponent,
+  BuildingNodeComponent,
+  ClientNodeComponent,
+  PersonNodeComponent,
+} from '../flex-graph';
 
 @NgModule({
   declarations: [
@@ -107,6 +112,9 @@ import { FlexGraphComponent } from '../flex-graph/flex-graph.component';
     GraphNodeComponent,
     EfficientTreeComponent,
     FlexGraphComponent,
+    BuildingNodeComponent,
+    ClientNodeComponent,
+    PersonNodeComponent,
   ],
   imports: [
     BrowserModule,

@@ -2,7 +2,7 @@
   *ngIf="!isRoot"
 ></div>
 <div class="node-content">
-  {{tree.content}}
+  <person-node [tree]="tree"></person-node>
 </div>
 <div class="bottom-connector"
    *ngIf="children.children.length"
@@ -13,7 +13,7 @@
 ></div>
 <div class="children" #children>
   <flex-graph
-    *ngFor="let child of tree.children"
+    *ngFor="let child of tree.Children"
     [tree]="child"
     [isRoot]="false"></flex-graph>
 </div>
