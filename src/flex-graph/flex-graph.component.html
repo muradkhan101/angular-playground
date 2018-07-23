@@ -9,6 +9,7 @@
 ></div>
 <div class="wide-connector" #wideConnector
   *ngIf="children.children.length"
+  [ngStyle]="getWideLinePosition(children)"
 ></div>
 <div class="children" #children>
   <flex-graph
