@@ -68,7 +68,10 @@ import {
   BuildingNodeComponent,
   ClientNodeComponent,
   PersonNodeComponent,
+  BlankNodeComponent,
+  ShouldCollapsePipe,
 } from '../flex-graph';
+import { CollapsedGraphComponent } from '../flex-graph';
 
 @NgModule({
   declarations: [
@@ -115,6 +118,9 @@ import {
     BuildingNodeComponent,
     ClientNodeComponent,
     PersonNodeComponent,
+    BlankNodeComponent,
+    ShouldCollapsePipe,
+    CollapsedGraphComponent,
   ],
   imports: [
     BrowserModule,
