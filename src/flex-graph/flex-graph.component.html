@@ -1,0 +1,18 @@
+<div class="top-connector"
+  *ngIf="!isRoot"
+></div>
+<div class="node-content">
+  {{tree.content}}
+</div>
+<div class="bottom-connector"
+   *ngIf="children.children.length"
+></div>
+<div class="wide-connector" #wideConnector
+  *ngIf="children.children.length"
+></div>
+<div class="children" #children>
+  <flex-graph
+    *ngFor="let child of tree.children"
+    [tree]="child"
+    [isRoot]="false"></flex-graph>
+</div>
