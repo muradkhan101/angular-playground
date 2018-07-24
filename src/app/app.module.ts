@@ -72,6 +72,7 @@ import {
   ShouldCollapsePipe,
 } from '../flex-graph';
 import { CollapsedGraphComponent } from '../flex-graph';
+import { AttributeSelectorComponent } from './attribute-selector/attribute-selector.component';
 
 @NgModule({
   declarations: [
@@ -121,6 +122,7 @@ import { CollapsedGraphComponent } from '../flex-graph';
     BlankNodeComponent,
     ShouldCollapsePipe,
     CollapsedGraphComponent,
+    AttributeSelectorComponent,
   ],
   imports: [
     BrowserModule,

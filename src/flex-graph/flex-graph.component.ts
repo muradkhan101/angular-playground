@@ -5,6 +5,7 @@ import {
   ElementRef,
   ChangeDetectorRef,
   ViewChild,
+  AfterViewInit,
 } from '@angular/core';
 
 declare const window: Window;
@@ -28,7 +29,7 @@ export interface Graph {
   templateUrl: './flex-graph.component.html',
   styleUrls: ['./flex-graph.component.scss']
 })
-export class FlexGraphComponent implements OnInit {
+export class FlexGraphComponent implements OnInit, AfterViewInit {
   @Input() tree: Graph;
   @Input() isRoot: boolean = false;
   @ViewChild('children') childNodes: ElementRef;
@@ -2108,5 +2109,7 @@ export class FlexGraphComponent implements OnInit {
       this.parent.nativeElement.classList.add('scroll-root');
     }
   }
-
+  ngAfterViewInit() {
+    this.cdr.detectChanges();
+  }
 }

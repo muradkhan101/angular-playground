@@ -21,10 +21,10 @@
       [tree]="child"
       [isRoot]="false"></flex-graph>
   </ng-container>
-
+  
   <ng-container *ngIf="tree | shouldCollapse">
-    <collapsed-graph
-     [childCollection]="tree.Children">
+    <collapsed-graph>
     </collapsed-graph>
+
   </ng-container>
 </div>

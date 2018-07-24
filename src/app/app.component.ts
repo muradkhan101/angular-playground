@@ -9,6 +9,7 @@ import { mergeMap } from 'rxjs/operator/mergeMap';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+  shouldRender = true;
   title = 'app';
   // filter1 = (word, i) => word.length % 2
   // filter2 = (word, i) => word.length > 5
