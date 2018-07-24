@@ -1,8 +1,7 @@
 $connector: #c4c4c4;
-:host {
+flex-graph:host {
     display: inline-flex;
     flex-direction: column;
-    justify-content: center;
     text-align: center;
 }
 .scroll-root {
@@ -11,6 +10,7 @@ $connector: #c4c4c4;
 
 .node-content {
     display: inline-block;
+    position: relative;
     // padding: 12px 16px;
     // margin: 8px 12px;
 }
@@ -41,7 +41,7 @@ $connector: #c4c4c4;
         background: $connector;
     }
 }
-.children {
+.children-wrapper .children {
     display: flex;
     justify-content: space-evenly;
     flex-grow: 1;

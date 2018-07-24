@@ -1,3 +1,73 @@
-<p>
-  collapsed-graph works!
-</p>
+<!-- Render regular graph component -->
+<ng-content *ngIf="!renderCollapsed"></ng-content>
+
+<!-- Render collapsed graph component -->
+<ng-container *ngIf="renderCollapsed">
+  <div class="wrapper" *ngIf="state.isCollapsed">
+    <div class="top-connector"></div>
+    <div class="node-content"
+      (click)="toggleCollapse(children.children[0].children.length > 0)"
+      [ngClass]="{pointer: children.children[0].children.length > 0}">
+      <multiple-element-node
+        [size]="childCollection.length > 5 ? 1 : 1.6"
+        [title]="state.title"
+        [subtitle]="state.subtitle"
+        [trees]="childCollection">
+      </multiple-element-node>
+      <div class="toggle-container" *ngIf="children.children[0].children.length > 0">
+        <div class="toggle toggle-open">
+          <i class="zmdi zmdi-plus-circle"></i>
+        </div>
+      </div>
+    </div>
+    <div class="bottom-connector"
+      *ngIf="children.children[0].children.length > 0">
+    </div>
+
+    <div class="wide-connector" #wideConnector
+      *ngIf="children.children[0].children.length > 0"
+      [ngStyle]="getWideLinePosition(children.children[0])">
+    </div>
+    
+    <div class="children-wrapper" #children>
+      <div class="children" collapsed-graph
+        [renderCollapsed]="state.collapsedChildren.length > 0"
+        [childCollection]="state.collapsedChildren"
+        [depth]="depth + 1">
+      </div>
+    </div>
+  </div>
+
+  <ng-container *ngIf="!state.isCollapsed">
+    <div class="wrapper" *ngFor="let tree of childCollection">
+      <div class="top-connector"></div>
+      <div class="node-content"
+        (click)="toggleCollapse(true)"
+        [ngClass]="{pointer: children.children[0].children.length > 0}">
+        <node-renderer [tree]="tree"></node-renderer>
+        <div class="toggle-container" *ngIf="children.children[0].children.length > 0 || !state.isCollapsed">
+          <div class="toggle toggle-close">
+            <i class="zmdi zmdi-minus-circle"></i>
+          </div>
+        </div>
+      </div>
+  
+      <div class="bottom-connector"
+        *ngIf="children.children[0].children.length > 0">
+      </div>
+  
+      <div class="wide-connector" #wideConnector
+        *ngIf="children.children[0].children.length > 0"
+        [ngStyle]="getWideLinePosition(children.children[0])">
+      </div>
+      
+      <div class="children-wrapper" #children>
+        <div class="children" collapsed-graph
+          [renderCollapsed]="tree.Children.length > 0"
+          [childCollection]="tree.Children"
+          [depth]="depth + 1">
+        </div>
+      </div>
+    </div>
+  </ng-container>
+</ng-container>

@@ -10,47 +10,23 @@ import {
 
 declare const window: Window;
 
-type NodeType = 'Person' | 'Building' | 'Client' | 'District' | 'Blank' | 'Site';
-
-export interface Graph {
-  Type: NodeType;
-  Title: string;
-  Subtitle: string;
-  AltText?: string;
-  Layer: number;
-  Level?: number;
-  ShiftType?: 'Day' | 'Night';
-  Children: Array<Graph>;
-  IsCollapsed?: boolean;
-}
+import { BaseGraphComponent, Graph} from './common';
 
 @Component({
   selector: 'flex-graph',
   templateUrl: './flex-graph.component.html',
   styleUrls: ['./flex-graph.component.scss']
 })
-export class FlexGraphComponent implements OnInit, AfterViewInit {
+export class FlexGraphComponent extends BaseGraphComponent implements OnInit, AfterViewInit {
   @Input() tree: Graph;
   @Input() isRoot: boolean = false;
   @ViewChild('children') childNodes: ElementRef;
   
   constructor(
-    private parent: ElementRef,
-    private cdr: ChangeDetectorRef
-  ) { }
-  private getWideLinePosition(childElement: HTMLElement) {
-    let parent = this.parent.nativeElement.getBoundingClientRect();
-    let children = childElement.children;
-    
-    let fChild = children[0].getBoundingClientRect();
-    let lChild = children[children.length - 1].getBoundingClientRect();
-    let width = Math.abs((lChild.left + lChild.width / 2) - (fChild.left + fChild.width / 2));
-    let left = (fChild.left + fChild.width / 2) - parent.left;
-    return {
-      width: width + 'px',
-      left: left + 'px',
-    };
-  }
+    parent: ElementRef,
+    cdr: ChangeDetectorRef,
+  ) { super(parent, cdr); }
+  
   private processTreeForGaps(tree: Graph): Graph {
     let currentLevel = tree.Layer;
     let newChildren = tree.Children.map((child) => {
@@ -65,13 +41,13 @@ export class FlexGraphComponent implements OnInit, AfterViewInit {
     let finalTree = Object.assign({}, tree, {Children: recursedChildren});
     return finalTree;
   }
-  setPosition() {
-    let children = this.childNodes.nativeElement.children;
-    let { left, width } = this.getWideLinePosition(children);
-    let wideLine: HTMLElement = this.parent.nativeElement.querySelector('.wide-connector');
-    wideLine.style.left = left + 'px';
-    wideLine.style.width = width + 'px';
-  }
+  // setPosition() {
+  //   let children = this.childNodes.nativeElement.children;
+  //   let { left, width } = this.getWideLinePosition(children);
+  //   let wideLine: HTMLElement = this.parent.nativeElement.querySelector('.wide-connector');
+  //   wideLine.style.left = left + 'px';
+  //   wideLine.style.width = width + 'px';
+  // }
   ngOnInit() {
     if (this.isRoot) {
       this.tree = this.processTreeForGaps(({

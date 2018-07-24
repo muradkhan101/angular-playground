@@ -70,6 +70,8 @@ import {
   PersonNodeComponent,
   BlankNodeComponent,
   ShouldCollapsePipe,
+  NodeRendererComponent,
+  MultipleElementNodeComponent,
 } from '../flex-graph';
 import { CollapsedGraphComponent } from '../flex-graph';
 import { AttributeSelectorComponent } from './attribute-selector/attribute-selector.component';
@@ -123,6 +125,8 @@ import { AttributeSelectorComponent } from './attribute-selector/attribute-selec
     ShouldCollapsePipe,
     CollapsedGraphComponent,
     AttributeSelectorComponent,
+    NodeRendererComponent,
+    MultipleElementNodeComponent
   ],
   imports: [
     BrowserModule,

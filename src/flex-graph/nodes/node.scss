@@ -4,8 +4,12 @@
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding: 8px 12px;
+    padding: 0px 12px;
     height: 140px;
+}
+multiple-element-node:host {
+    height: auto;
+    min-height: 140px;
 }
 blank-node:host {
     margin: 0 auto;
@@ -29,4 +33,14 @@ blank-node:host {
 }
 .node-icon {
     font-size: 36px;
+}
+.icon-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 80px;
+    .node-icon {
+        line-height: 0;
+        margin-right: 2px;
+    }
 }

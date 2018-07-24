@@ -1,30 +1,23 @@
 <div class="top-connector"
   *ngIf="!isRoot"
 ></div>
-<div class="node-content">
-  <person-node *ngIf="tree.Type === 'Person'" [tree]="tree"></person-node>
-  <blank-node *ngIf="tree.Type === 'Blank'" [tree]="tree"></blank-node>
-  <person-node *ngIf="tree.Type === 'Site'" [tree]="tree"></person-node>
-  <person-node *ngIf="tree.Type === 'Building'" [tree]="tree"></person-node>
+<div class="node-content"
+  node-renderer [tree]="tree">
 </div>
 <div class="bottom-connector"
-   *ngIf="children.children.length > 0"
+   *ngIf="children.children[0].children.length > 0"
 ></div>
 <div class="wide-connector" #wideConnector
-  *ngIf="children.children.length > 0"
-  [ngStyle]="getWideLinePosition(children)"
+  *ngIf="children.children[0].children.length > 0"
+  [ngStyle]="getWideLinePosition(children.children[0])"
 ></div>
-<div class="children" #children>
-  <ng-container *ngIf="!(tree | shouldCollapse)">
+<div class="children-wrapper" #children>
+  <div class="children" collapsed-graph
+     [renderCollapsed]="tree | shouldCollapse"
+     [childCollection]="tree.Children">
     <flex-graph
       *ngFor="let child of tree.Children"
       [tree]="child"
       [isRoot]="false"></flex-graph>
-  </ng-container>
-  
-  <ng-container *ngIf="tree | shouldCollapse">
-    <collapsed-graph>
-    </collapsed-graph>
-
-  </ng-container>
+  </div>
 </div>

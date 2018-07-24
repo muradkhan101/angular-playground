@@ -6,7 +6,7 @@ import { Graph } from './flex-graph.component';
 })
 export class ShouldCollapsePipe implements PipeTransform {
     transform(tree: Graph, args?: any): any {
-        if (tree.Layer > 3 && tree.Children.length > 1) {
+        if (tree.Layer > 1 && tree.Children.length > 1) {
             return true;
         }
         if (tree.Children.length > 5 && tree.Layer > 1) {
