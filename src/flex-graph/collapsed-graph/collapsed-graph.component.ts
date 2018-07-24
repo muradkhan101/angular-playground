@@ -36,8 +36,8 @@ export class CollapsedGraphComponent extends BaseGraphComponent implements OnIni
       if (mismatchedTitles.length) this.state.title = 'Multiple';
       else this.state.title = this.childCollection[0].Title;
       // Subtitles SHOULD be the same
-      this.state.subtitle = this.childCollection[0].Subtitle;
-  
+      this.state.subtitle = this.childCollection[0].Subtitle
+        || (this.childCollection[1] && this.childCollection[1].Subtitle);
       this.state.collapsedChildren = this.collapseChildren(this.childCollection);
     }
   }

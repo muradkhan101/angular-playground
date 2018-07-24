@@ -6,15 +6,15 @@
   <div class="wrapper" *ngIf="state.isCollapsed">
     <div class="top-connector"></div>
     <div class="node-content"
-      (click)="toggleCollapse(children.children[0].children.length > 0)"
-      [ngClass]="{pointer: children.children[0].children.length > 0}">
+      (click)="toggleCollapse(children.children[0].children.length > 0  && childCollection.length > 1)"
+      [ngClass]="{pointer: children.children[0].children.length > 0  && childCollection.length > 1}">
       <multiple-element-node
         [size]="childCollection.length > 5 ? 1 : 1.6"
         [title]="state.title"
         [subtitle]="state.subtitle"
         [trees]="childCollection">
       </multiple-element-node>
-      <div class="toggle-container" *ngIf="children.children[0].children.length > 0">
+      <div class="toggle-container" *ngIf="children.children[0].children.length > 0 && childCollection.length > 1">
         <div class="toggle toggle-open">
           <i class="zmdi zmdi-plus-circle"></i>
         </div>
