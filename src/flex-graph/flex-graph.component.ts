@@ -25,7 +25,10 @@ export class FlexGraphComponent extends BaseGraphComponent implements OnInit, Af
   constructor(
     parent: ElementRef,
     cdr: ChangeDetectorRef,
-  ) { super(parent, cdr); }
+  ) {
+    super(parent, cdr);
+    this.ngAfterViewInit = this.ngAfterViewInit.bind(this);
+  }
   
   private processTreeForGaps(tree: Graph): Graph {
     let currentLevel = tree.Layer;
@@ -52,2040 +55,871 @@ export class FlexGraphComponent extends BaseGraphComponent implements OnInit, Af
     if (this.isRoot) {
       this.tree = this.processTreeForGaps(({
         "Root": {
-          "Type": "Building",
-          "Title": "Mann A",
-          "Subtitle": "commodo",
+          "Type": "Client",
+          "Title": "Marietta S",
+          "Subtitle": "adipisicing",
           "Layer": 0,
           "Children": [
             {
-              "Type": "Building",
-              "Title": "Sasha R",
-              "Subtitle": "excepteur",
+              "Type": "Person",
+              "Title": "Freda N",
+              "Subtitle": "consectetur",
               "Layer": 1,
               "Children": [
                 {
-                  "Type": "Site",
-                  "Title": "Suzette A",
-                  "Subtitle": "incididunt",
+                  "Type": "Person",
+                  "Title": "Oneil C",
+                  "Subtitle": "do",
                   "Layer": 2,
                   "Children": [
-                    {
-                      "Type": "Site",
-                      "Title": "Tisha F",
-                      "Subtitle": "pariatur",
-                      "Layer": 4,
-                      "Children": [
-                        {
-                          "Type": "Person",
-                          "Title": "Ochoa C",
-                          "Subtitle": "commodo",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": "Day"
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Schultz E",
-                          "Subtitle": "amet",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": null
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Giles C",
-                          "Subtitle": "laborum",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": null
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Alyce B",
-                          "Subtitle": "sint",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": "Night"
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Myra C",
-                          "Subtitle": "laborum",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": "Night"
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "David N",
-                          "Subtitle": "magna",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": "Day"
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Ines N",
-                          "Subtitle": "amet",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": "Day"
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Mayer D",
-                          "Subtitle": "nostrud",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": "Night"
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Lucinda S",
-                          "Subtitle": "Lorem",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": "Day"
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Inez C",
-                          "Subtitle": "adipisicing",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": "Day"
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Helena H",
-                          "Subtitle": "nulla",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": "Night"
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Hebert S",
-                          "Subtitle": "do",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": "Night"
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Chrystal R",
-                          "Subtitle": "consectetur",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": "Day"
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Guzman D",
-                          "Subtitle": "veniam",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": "Day"
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Christian K",
-                          "Subtitle": "minim",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": "Day"
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Dollie W",
-                          "Subtitle": "ut",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": null
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Meghan S",
-                          "Subtitle": "reprehenderit",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": "Day"
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Walters F",
-                          "Subtitle": "qui",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": "Night"
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Hawkins C",
-                          "Subtitle": "quis",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": null
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Avis D",
-                          "Subtitle": "laborum",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": "Day"
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Hillary J",
-                          "Subtitle": "reprehenderit",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": null
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Letitia R",
-                          "Subtitle": "adipisicing",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": "Night"
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Heather R",
-                          "Subtitle": "occaecat",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": null
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Hewitt W",
-                          "Subtitle": "laborum",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": null
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Bernard N",
-                          "Subtitle": "duis",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": null
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Amber B",
-                          "Subtitle": "dolore",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": "Night"
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Whitney M",
-                          "Subtitle": "ex",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": null
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Bertha F",
-                          "Subtitle": "do",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": "Night"
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Marissa F",
-                          "Subtitle": "officia",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": null
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Carney C",
-                          "Subtitle": "incididunt",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": "Day"
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Meagan T",
-                          "Subtitle": "officia",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": null
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Hall T",
-                          "Subtitle": "nostrud",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": "Day"
-                        }
-                      ]
-                    },
                     {
                       "Type": "Person",
-                      "Title": "Jeannine S",
-                      "Subtitle": "do",
+                      "Title": "Hunt A",
+                      "Subtitle": "voluptate",
                       "Layer": 3,
-                      "Children": [],
-                      "ShiftType": null
-                    }
-                  ]
-                },
-                {
-                  "Type": "Person",
-                  "Title": "Liz J",
-                  "Subtitle": "incididunt",
-                  "Layer": 2,
-                  "Children": [
-                    {
-                      "Type": "Site",
-                      "Title": "Kimberly H",
-                      "Subtitle": "consequat",
-                      "Layer": 4,
                       "Children": [
                         {
                           "Type": "Person",
-                          "Title": "Edwards S",
-                          "Subtitle": "culpa",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": null
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Lori H",
-                          "Subtitle": "ipsum",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": "Day"
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Lyons S",
-                          "Subtitle": "et",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": "Night"
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Angel G",
-                          "Subtitle": "anim",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": null
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Gertrude E",
-                          "Subtitle": "amet",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": "Night"
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Saundra C",
-                          "Subtitle": "in",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": "Night"
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Floyd A",
-                          "Subtitle": "enim",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": null
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Kramer R",
-                          "Subtitle": "do",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": "Day"
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Banks S",
-                          "Subtitle": "aliqua",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": "Night"
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Janet J",
-                          "Subtitle": "ullamco",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": "Day"
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Ruiz Y",
-                          "Subtitle": "consectetur",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": null
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Carolyn B",
-                          "Subtitle": "ex",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": "Night"
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Goldie C",
-                          "Subtitle": "ex",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": "Night"
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Adela R",
-                          "Subtitle": "do",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": "Night"
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Ruth H",
-                          "Subtitle": "eu",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": null
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Rosa W",
-                          "Subtitle": "amet",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": "Day"
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Louise D",
-                          "Subtitle": "eiusmod",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": null
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Gina C",
-                          "Subtitle": "consequat",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": "Night"
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Jeannie J",
-                          "Subtitle": "reprehenderit",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": "Night"
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Annie J",
-                          "Subtitle": "esse",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": "Night"
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Woods H",
-                          "Subtitle": "non",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": null
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Elena C",
-                          "Subtitle": "non",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": "Night"
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Chandler L",
-                          "Subtitle": "pariatur",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": "Day"
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Becker A",
-                          "Subtitle": "dolor",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": "Night"
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Simmons K",
-                          "Subtitle": "qui",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": null
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Garrison M",
+                          "Title": "Morin W",
                           "Subtitle": "aliquip",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": "Night"
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Lina J",
-                          "Subtitle": "do",
-                          "Layer": 5,
+                          "Layer": 4,
                           "Children": [],
                           "ShiftType": null
                         },
                         {
                           "Type": "Person",
-                          "Title": "Downs M",
-                          "Subtitle": "fugiat",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": "Night"
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Mccray W",
-                          "Subtitle": "dolor",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": "Night"
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Butler B",
-                          "Subtitle": "duis",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": "Day"
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Dale C",
-                          "Subtitle": "sint",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": null
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Duncan M",
-                          "Subtitle": "nisi",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": "Night"
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Hollie H",
-                          "Subtitle": "ad",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": null
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Janelle T",
-                          "Subtitle": "minim",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": null
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Daugherty L",
-                          "Subtitle": "in",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": "Day"
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Langley A",
-                          "Subtitle": "magna",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": null
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Ophelia K",
-                          "Subtitle": "deserunt",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": "Night"
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Benita M",
-                          "Subtitle": "sint",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": "Day"
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Nita C",
-                          "Subtitle": "ipsum",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": null
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Decker B",
-                          "Subtitle": "ut",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": "Night"
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Kelli B",
-                          "Subtitle": "sit",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": null
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Cobb H",
+                          "Title": "Lopez F",
                           "Subtitle": "est",
-                          "Layer": 5,
+                          "Layer": 4,
                           "Children": [],
-                          "ShiftType": "Night"
+                          "ShiftType": null
                         },
                         {
                           "Type": "Person",
-                          "Title": "Susie A",
-                          "Subtitle": "pariatur",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": "Day"
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Acevedo E",
-                          "Subtitle": "laborum",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": "Night"
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Howe E",
+                          "Title": "Vazquez M",
                           "Subtitle": "elit",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": "Day"
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Dee K",
-                          "Subtitle": "cillum",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": "Day"
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Patrice S",
-                          "Subtitle": "nostrud",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": null
-                        }
-                      ]
-                    },
-                    {
-                      "Type": "Site",
-                      "Title": "Lindsey N",
-                      "Subtitle": "proident",
-                      "Layer": 3,
-                      "Children": []
-                    }
-                  ],
-                  "ShiftType": "Day"
-                },
-                {
-                  "Type": "Site",
-                  "Title": "Crawford S",
-                  "Subtitle": "officia",
-                  "Layer": 2,
-                  "Children": [
-                    {
-                      "Type": "Building",
-                      "Title": "Sheryl G",
-                      "Subtitle": "sunt",
-                      "Layer": 4,
-                      "Children": [
-                        {
-                          "Type": "Person",
-                          "Title": "Richardson A",
-                          "Subtitle": "dolore",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": "Day"
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Leah V",
-                          "Subtitle": "aliqua",
-                          "Layer": 5,
+                          "Layer": 4,
                           "Children": [],
                           "ShiftType": "Night"
                         },
                         {
                           "Type": "Person",
-                          "Title": "Dina E",
-                          "Subtitle": "Lorem",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": null
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Cleveland G",
-                          "Subtitle": "nostrud",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": null
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Cook S",
-                          "Subtitle": "culpa",
-                          "Layer": 5,
+                          "Title": "Lelia B",
+                          "Subtitle": "irure",
+                          "Layer": 4,
                           "Children": [],
                           "ShiftType": "Night"
                         },
                         {
                           "Type": "Person",
-                          "Title": "Silvia M",
-                          "Subtitle": "nulla",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": null
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Monique H",
-                          "Subtitle": "non",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": null
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Ladonna S",
-                          "Subtitle": "officia",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": "Night"
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Vance M",
-                          "Subtitle": "pariatur",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": "Day"
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Holt W",
-                          "Subtitle": "sint",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": "Night"
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Aurelia J",
-                          "Subtitle": "amet",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": null
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Baxter J",
-                          "Subtitle": "exercitation",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": null
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Rojas S",
-                          "Subtitle": "Lorem",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": "Day"
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Alice P",
-                          "Subtitle": "consequat",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": null
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Wanda K",
-                          "Subtitle": "amet",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": null
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Sofia I",
-                          "Subtitle": "exercitation",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": null
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Roxanne J",
-                          "Subtitle": "laborum",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": null
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Mable M",
-                          "Subtitle": "aliqua",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": "Day"
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Mason C",
-                          "Subtitle": "ex",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": "Night"
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Keisha S",
-                          "Subtitle": "esse",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": null
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Moss T",
-                          "Subtitle": "ut",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": "Day"
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Janice J",
-                          "Subtitle": "consectetur",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": null
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Hatfield F",
-                          "Subtitle": "voluptate",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": "Night"
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Marcia F",
-                          "Subtitle": "amet",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": "Night"
-                        }
-                      ]
-                    }
-                  ]
-                },
-                {
-                  "Type": "Person",
-                  "Title": "Adams L",
-                  "Subtitle": "esse",
-                  "Layer": 2,
-                  "Children": [
-                    {
-                      "Type": "Building",
-                      "Title": "Mooney M",
-                      "Subtitle": "quis",
-                      "Layer": 4,
-                      "Children": [
-                        {
-                          "Type": "Person",
-                          "Title": "Oneill M",
-                          "Subtitle": "consectetur",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": "Night"
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Marylou B",
-                          "Subtitle": "esse",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": "Night"
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Stokes P",
-                          "Subtitle": "laboris",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": null
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Pacheco H",
-                          "Subtitle": "magna",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": "Night"
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Lisa J",
-                          "Subtitle": "qui",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": null
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Patrick H",
-                          "Subtitle": "anim",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": null
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Mcclain P",
-                          "Subtitle": "in",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": "Day"
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Gomez B",
-                          "Subtitle": "ea",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": null
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Anne M",
-                          "Subtitle": "velit",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": null
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Velazquez G",
-                          "Subtitle": "do",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": null
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Petra R",
-                          "Subtitle": "culpa",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": "Day"
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Pace W",
-                          "Subtitle": "do",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": null
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Terri G",
-                          "Subtitle": "proident",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": "Day"
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Mollie S",
-                          "Subtitle": "deserunt",
-                          "Layer": 5,
+                          "Title": "Lois L",
+                          "Subtitle": "aute",
+                          "Layer": 4,
                           "Children": [],
                           "ShiftType": "Day"
                         }
-                      ]
-                    },
-                    {
-                      "Type": "Site",
-                      "Title": "Travis P",
-                      "Subtitle": "nostrud",
-                      "Layer": 3,
-                      "Children": []
-                    },
-                    {
-                      "Type": "Person",
-                      "Title": "Natalia M",
-                      "Subtitle": "laborum",
-                      "Layer": 3,
-                      "Children": [],
+                      ],
                       "ShiftType": "Night"
                     },
                     {
-                      "Type": "Site",
-                      "Title": "Gloria G",
-                      "Subtitle": "sint",
+                      "Type": "Person",
+                      "Title": "Barrett J",
+                      "Subtitle": "do",
                       "Layer": 3,
-                      "Children": []
+                      "Children": [
+                        {
+                          "Type": "Person",
+                          "Title": "Tami K",
+                          "Subtitle": "ea",
+                          "Layer": 4,
+                          "Children": [],
+                          "ShiftType": "Day"
+                        },
+                        {
+                          "Type": "Person",
+                          "Title": "Celia C",
+                          "Subtitle": "ex",
+                          "Layer": 4,
+                          "Children": [],
+                          "ShiftType": "Day"
+                        },
+                        {
+                          "Type": "Person",
+                          "Title": "Walters L",
+                          "Subtitle": "elit",
+                          "Layer": 4,
+                          "Children": [],
+                          "ShiftType": null
+                        },
+                        {
+                          "Type": "Person",
+                          "Title": "Carol E",
+                          "Subtitle": "aliqua",
+                          "Layer": 4,
+                          "Children": [],
+                          "ShiftType": "Night"
+                        },
+                        {
+                          "Type": "Person",
+                          "Title": "Audra J",
+                          "Subtitle": "excepteur",
+                          "Layer": 4,
+                          "Children": [],
+                          "ShiftType": "Night"
+                        },
+                        {
+                          "Type": "Person",
+                          "Title": "Twila A",
+                          "Subtitle": "labore",
+                          "Layer": 4,
+                          "Children": [],
+                          "ShiftType": "Day"
+                        },
+                        {
+                          "Type": "Person",
+                          "Title": "Christian R",
+                          "Subtitle": "incididunt",
+                          "Layer": 4,
+                          "Children": [],
+                          "ShiftType": null
+                        },
+                        {
+                          "Type": "Person",
+                          "Title": "Levy S",
+                          "Subtitle": "ex",
+                          "Layer": 4,
+                          "Children": [],
+                          "ShiftType": null
+                        }
+                      ],
+                      "ShiftType": null
+                    },
+                    {
+                      "Type": "Person",
+                      "Title": "Velasquez D",
+                      "Subtitle": "tempor",
+                      "Layer": 3,
+                      "Children": [
+                        {
+                          "Type": "Person",
+                          "Title": "Francis G",
+                          "Subtitle": "ipsum",
+                          "Layer": 4,
+                          "Children": [],
+                          "ShiftType": null
+                        }
+                      ],
+                      "ShiftType": "Day"
+                    },
+                    {
+                      "Type": "Person",
+                      "Title": "Erickson C",
+                      "Subtitle": "non",
+                      "Layer": 3,
+                      "Children": [
+                        {
+                          "Type": "Person",
+                          "Title": "Wyatt K",
+                          "Subtitle": "non",
+                          "Layer": 4,
+                          "Children": [],
+                          "ShiftType": null
+                        },
+                        {
+                          "Type": "Person",
+                          "Title": "Scott M",
+                          "Subtitle": "aute",
+                          "Layer": 4,
+                          "Children": [],
+                          "ShiftType": null
+                        },
+                        {
+                          "Type": "Person",
+                          "Title": "Lolita T",
+                          "Subtitle": "excepteur",
+                          "Layer": 4,
+                          "Children": [],
+                          "ShiftType": null
+                        }
+                      ],
+                      "ShiftType": "Night"
                     }
                   ],
                   "ShiftType": null
                 },
                 {
-                  "Type": "Site",
-                  "Title": "Moran S",
-                  "Subtitle": "commodo",
-                  "Layer": 2,
-                  "Children": [
-                    {
-                      "Type": "Site",
-                      "Title": "Verna H",
-                      "Subtitle": "sunt",
-                      "Layer": 4,
-                      "Children": [
-                        {
-                          "Type": "Person",
-                          "Title": "Lois O",
-                          "Subtitle": "ut",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": null
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Talley E",
-                          "Subtitle": "voluptate",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": "Day"
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Rene C",
-                          "Subtitle": "dolor",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": "Day"
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Ford D",
-                          "Subtitle": "velit",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": "Night"
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Dana M",
-                          "Subtitle": "quis",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": "Night"
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Julie O",
-                          "Subtitle": "officia",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": "Night"
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Navarro J",
-                          "Subtitle": "magna",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": "Night"
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Neal W",
-                          "Subtitle": "officia",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": "Day"
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Rodriguez J",
-                          "Subtitle": "minim",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": null
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Walker T",
-                          "Subtitle": "cillum",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": "Day"
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Harmon H",
-                          "Subtitle": "reprehenderit",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": "Day"
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Ramirez P",
-                          "Subtitle": "exercitation",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": "Night"
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Black J",
-                          "Subtitle": "et",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": "Day"
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Prince R",
-                          "Subtitle": "consectetur",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": "Day"
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Campbell E",
-                          "Subtitle": "cillum",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": "Day"
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Lydia P",
-                          "Subtitle": "Lorem",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": null
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Soto C",
-                          "Subtitle": "aliquip",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": "Night"
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Alba J",
-                          "Subtitle": "id",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": "Night"
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Claire H",
-                          "Subtitle": "deserunt",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": null
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Shields T",
-                          "Subtitle": "Lorem",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": "Day"
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Walter M",
-                          "Subtitle": "ipsum",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": null
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "West F",
-                          "Subtitle": "tempor",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": null
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Vang M",
-                          "Subtitle": "est",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": null
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Keith M",
-                          "Subtitle": "exercitation",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": "Night"
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Gonzales D",
-                          "Subtitle": "consectetur",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": "Night"
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Fields O",
-                          "Subtitle": "nisi",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": "Night"
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Key H",
-                          "Subtitle": "excepteur",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": "Night"
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Robles M",
-                          "Subtitle": "nostrud",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": "Night"
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Edwina B",
-                          "Subtitle": "esse",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": "Night"
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Melendez H",
-                          "Subtitle": "non",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": "Day"
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Monroe S",
-                          "Subtitle": "aliqua",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": "Day"
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Sanchez C",
-                          "Subtitle": "tempor",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": null
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Lorna L",
-                          "Subtitle": "culpa",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": "Night"
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Kinney L",
-                          "Subtitle": "sint",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": null
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Wright V",
-                          "Subtitle": "reprehenderit",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": null
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Lambert N",
-                          "Subtitle": "voluptate",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": "Night"
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Jenny C",
-                          "Subtitle": "laborum",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": null
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Candice L",
-                          "Subtitle": "quis",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": "Day"
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Kari F",
-                          "Subtitle": "labore",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": "Night"
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Tammy S",
-                          "Subtitle": "consectetur",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": "Night"
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Lynnette C",
-                          "Subtitle": "magna",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": null
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Glenda K",
-                          "Subtitle": "est",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": null
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Blanchard D",
-                          "Subtitle": "excepteur",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": null
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Mccall S",
-                          "Subtitle": "minim",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": "Night"
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Villarreal N",
-                          "Subtitle": "qui",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": "Day"
-                        }
-                      ]
-                    },
-                    {
-                      "Type": "Site",
-                      "Title": "Glenna C",
-                      "Subtitle": "mollit",
-                      "Layer": 3,
-                      "Children": []
-                    }
-                  ]
-                },
-                {
-                  "Type": "Site",
-                  "Title": "Ginger F",
-                  "Subtitle": "ipsum",
-                  "Layer": 2,
-                  "Children": []
-                }
-              ]
-            },
-            {
-              "Type": "Site",
-              "Title": "Salinas E",
-              "Subtitle": "ullamco",
-              "Layer": 1,
-              "Children": [
-                {
-                  "Type": "Building",
-                  "Title": "Joyce M",
-                  "Subtitle": "exercitation",
+                  "Type": "Person",
+                  "Title": "Latasha M",
+                  "Subtitle": "labore",
                   "Layer": 2,
                   "Children": [
                     {
                       "Type": "Person",
-                      "Title": "Shannon B",
-                      "Subtitle": "qui",
-                      "Layer": 4,
+                      "Title": "Dale T",
+                      "Subtitle": "Lorem",
+                      "Layer": 3,
                       "Children": [
                         {
                           "Type": "Person",
-                          "Title": "Swanson C",
-                          "Subtitle": "aliquip",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": "Night"
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Yang D",
-                          "Subtitle": "deserunt",
-                          "Layer": 5,
+                          "Title": "Oneill M",
+                          "Subtitle": "id",
+                          "Layer": 4,
                           "Children": [],
                           "ShiftType": "Day"
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Workman P",
-                          "Subtitle": "aliquip",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": "Day"
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Elinor W",
-                          "Subtitle": "fugiat",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": "Day"
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Guerrero L",
-                          "Subtitle": "enim",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": "Night"
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Lenora D",
-                          "Subtitle": "officia",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": "Night"
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Hogan D",
-                          "Subtitle": "veniam",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": "Night"
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Noreen M",
-                          "Subtitle": "laborum",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": "Day"
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Little L",
-                          "Subtitle": "veniam",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": "Day"
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Wilkinson K",
-                          "Subtitle": "nostrud",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": null
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Mosley B",
-                          "Subtitle": "dolor",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": "Day"
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Laurel N",
-                          "Subtitle": "velit",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": "Day"
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Leblanc F",
-                          "Subtitle": "sint",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": "Day"
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Snow G",
-                          "Subtitle": "sint",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": "Night"
                         }
                       ],
-                      "ShiftType": null
+                      "ShiftType": "Night"
                     },
                     {
-                      "Type": "Building",
-                      "Title": "Wise M",
-                      "Subtitle": "aliqua",
+                      "Type": "Person",
+                      "Title": "Jeannine C",
+                      "Subtitle": "in",
                       "Layer": 3,
-                      "Children": []
+                      "Children": [],
+                      "ShiftType": "Night"
                     }
-                  ]
-                },
-                {
-                  "Type": "Person",
-                  "Title": "Rosetta W",
-                  "Subtitle": "commodo",
-                  "Layer": 2,
-                  "Children": [],
+                  ],
                   "ShiftType": "Day"
                 },
                 {
-                  "Type": "Building",
-                  "Title": "Katrina W",
-                  "Subtitle": "ex",
+                  "Type": "Person",
+                  "Title": "Earnestine M",
+                  "Subtitle": "veniam",
                   "Layer": 2,
                   "Children": [
                     {
                       "Type": "Person",
-                      "Title": "Ester S",
-                      "Subtitle": "sint",
-                      "Layer": 4,
-                      "Children": [
-                        {
-                          "Type": "Person",
-                          "Title": "Sims C",
-                          "Subtitle": "cillum",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": "Night"
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Kirkland M",
-                          "Subtitle": "ea",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": "Night"
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Holman M",
-                          "Subtitle": "aute",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": "Night"
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Kendra H",
-                          "Subtitle": "reprehenderit",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": null
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Nicole E",
-                          "Subtitle": "nisi",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": null
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Jaclyn B",
-                          "Subtitle": "aliqua",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": null
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Delacruz B",
-                          "Subtitle": "ullamco",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": "Night"
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Ofelia M",
-                          "Subtitle": "nisi",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": null
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Carrillo V",
-                          "Subtitle": "id",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": "Night"
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Atkinson S",
-                          "Subtitle": "minim",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": "Night"
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Levy F",
-                          "Subtitle": "tempor",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": "Night"
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Kline M",
-                          "Subtitle": "voluptate",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": "Day"
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Adriana T",
-                          "Subtitle": "occaecat",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": "Night"
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Valeria S",
-                          "Subtitle": "anim",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": null
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Rodriquez D",
-                          "Subtitle": "magna",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": null
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Sanders C",
-                          "Subtitle": "labore",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": "Day"
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Queen L",
-                          "Subtitle": "Lorem",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": null
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Boyle S",
-                          "Subtitle": "aute",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": "Night"
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Kathrine B",
-                          "Subtitle": "nostrud",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": null
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Francine K",
-                          "Subtitle": "aliqua",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": "Night"
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Shari W",
-                          "Subtitle": "ipsum",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": null
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "May P",
-                          "Subtitle": "in",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": "Day"
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Rowena V",
-                          "Subtitle": "tempor",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": "Day"
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Virginia J",
-                          "Subtitle": "excepteur",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": null
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Janie L",
-                          "Subtitle": "fugiat",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": "Day"
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Erica H",
-                          "Subtitle": "quis",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": null
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Kristina M",
-                          "Subtitle": "esse",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": "Day"
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Townsend C",
-                          "Subtitle": "nisi",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": "Night"
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Julianne B",
-                          "Subtitle": "cillum",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": "Day"
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Kaufman L",
-                          "Subtitle": "cillum",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": null
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Tina L",
-                          "Subtitle": "ullamco",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": "Day"
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Florence K",
-                          "Subtitle": "nulla",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": "Night"
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Petty M",
-                          "Subtitle": "amet",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": null
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Barron J",
-                          "Subtitle": "id",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": "Night"
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Jarvis S",
-                          "Subtitle": "esse",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": "Day"
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Colette T",
-                          "Subtitle": "elit",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": "Day"
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Finch K",
-                          "Subtitle": "nisi",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": "Day"
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Rivera B",
-                          "Subtitle": "voluptate",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": "Night"
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Rosemarie R",
-                          "Subtitle": "nulla",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": null
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Lloyd C",
-                          "Subtitle": "ex",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": "Day"
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Blackwell M",
-                          "Subtitle": "id",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": "Night"
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Peggy C",
-                          "Subtitle": "reprehenderit",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": null
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Conway L",
-                          "Subtitle": "duis",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": "Day"
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Pugh P",
-                          "Subtitle": "consectetur",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": null
-                        },
-                        {
-                          "Type": "Person",
-                          "Title": "Peck L",
-                          "Subtitle": "mollit",
-                          "Layer": 5,
-                          "Children": [],
-                          "ShiftType": "Night"
-                        }
-                      ],
-                      "ShiftType": "Day"
-                    },
-                    {
-                      "Type": "Person",
-                      "Title": "Flora S",
-                      "Subtitle": "amet",
+                      "Title": "Darcy L",
+                      "Subtitle": "ullamco",
                       "Layer": 3,
-                      "Children": [],
-                      "ShiftType": null
-                    },
-                    {
-                      "Type": "Person",
-                      "Title": "Karen C",
-                      "Subtitle": "commodo",
-                      "Layer": 3,
-                      "Children": [],
-                      "ShiftType": "Day"
-                    }
-                  ]
-                },
-                {
-                  "Type": "Building",
-                  "Title": "Shepherd R",
-                  "Subtitle": "dolore",
-                  "Layer": 2,
-                  "Children": [
-                    {
-                      "Type": "Person",
-                      "Title": "Alejandra K",
-                      "Subtitle": "nisi",
-                      "Layer": 4,
                       "Children": [],
                       "ShiftType": "Night"
                     },
                     {
                       "Type": "Person",
-                      "Title": "Nixon M",
-                      "Subtitle": "ea",
+                      "Title": "Booth K",
+                      "Subtitle": "culpa",
                       "Layer": 3,
-                      "Children": [],
+                      "Children": [
+                        {
+                          "Type": "Person",
+                          "Title": "Pacheco A",
+                          "Subtitle": "enim",
+                          "Layer": 4,
+                          "Children": [],
+                          "ShiftType": "Day"
+                        }
+                      ],
                       "ShiftType": "Day"
                     },
                     {
-                      "Type": "Site",
-                      "Title": "Leola K",
-                      "Subtitle": "pariatur",
+                      "Type": "Person",
+                      "Title": "Espinoza R",
+                      "Subtitle": "ut",
                       "Layer": 3,
-                      "Children": []
+                      "Children": [
+                        {
+                          "Type": "Person",
+                          "Title": "Jo C",
+                          "Subtitle": "ipsum",
+                          "Layer": 4,
+                          "Children": [],
+                          "ShiftType": "Night"
+                        },
+                        {
+                          "Type": "Person",
+                          "Title": "Sellers A",
+                          "Subtitle": "reprehenderit",
+                          "Layer": 4,
+                          "Children": [],
+                          "ShiftType": null
+                        },
+                        {
+                          "Type": "Person",
+                          "Title": "Mona O",
+                          "Subtitle": "exercitation",
+                          "Layer": 4,
+                          "Children": [],
+                          "ShiftType": null
+                        },
+                        {
+                          "Type": "Person",
+                          "Title": "Hansen P",
+                          "Subtitle": "quis",
+                          "Layer": 4,
+                          "Children": [],
+                          "ShiftType": null
+                        }
+                      ],
+                      "ShiftType": "Night"
+                    },
+                    {
+                      "Type": "Person",
+                      "Title": "Glass K",
+                      "Subtitle": "nulla",
+                      "Layer": 3,
+                      "Children": [
+                        {
+                          "Type": "Person",
+                          "Title": "Ramsey C",
+                          "Subtitle": "velit",
+                          "Layer": 4,
+                          "Children": [],
+                          "ShiftType": "Night"
+                        },
+                        {
+                          "Type": "Person",
+                          "Title": "Stacy W",
+                          "Subtitle": "magna",
+                          "Layer": 4,
+                          "Children": [],
+                          "ShiftType": "Night"
+                        }
+                      ],
+                      "ShiftType": "Day"
                     }
-                  ]
+                  ],
+                  "ShiftType": null
+                },
+                {
+                  "Type": "Person",
+                  "Title": "Weaver W",
+                  "Subtitle": "cillum",
+                  "Layer": 2,
+                  "Children": [
+                    {
+                      "Type": "Person",
+                      "Title": "Montgomery D",
+                      "Subtitle": "voluptate",
+                      "Layer": 3,
+                      "Children": [
+                        {
+                          "Type": "Person",
+                          "Title": "Betsy K",
+                          "Subtitle": "elit",
+                          "Layer": 4,
+                          "Children": [],
+                          "ShiftType": "Day"
+                        },
+                        {
+                          "Type": "Person",
+                          "Title": "Holden J",
+                          "Subtitle": "nulla",
+                          "Layer": 4,
+                          "Children": [],
+                          "ShiftType": "Night"
+                        }
+                      ],
+                      "ShiftType": "Night"
+                    },
+                    {
+                      "Type": "Person",
+                      "Title": "Natalie Q",
+                      "Subtitle": "officia",
+                      "Layer": 3,
+                      "Children": [
+                        {
+                          "Type": "Person",
+                          "Title": "Mcdaniel L",
+                          "Subtitle": "fugiat",
+                          "Layer": 4,
+                          "Children": [],
+                          "ShiftType": "Day"
+                        },
+                        {
+                          "Type": "Person",
+                          "Title": "Bobbi F",
+                          "Subtitle": "in",
+                          "Layer": 4,
+                          "Children": [],
+                          "ShiftType": null
+                        },
+                        {
+                          "Type": "Person",
+                          "Title": "Burks A",
+                          "Subtitle": "irure",
+                          "Layer": 4,
+                          "Children": [],
+                          "ShiftType": "Day"
+                        },
+                        {
+                          "Type": "Person",
+                          "Title": "Esmeralda S",
+                          "Subtitle": "ipsum",
+                          "Layer": 4,
+                          "Children": [],
+                          "ShiftType": "Day"
+                        },
+                        {
+                          "Type": "Person",
+                          "Title": "Arnold S",
+                          "Subtitle": "adipisicing",
+                          "Layer": 4,
+                          "Children": [],
+                          "ShiftType": "Day"
+                        },
+                        {
+                          "Type": "Person",
+                          "Title": "Wells A",
+                          "Subtitle": "ut",
+                          "Layer": 4,
+                          "Children": [],
+                          "ShiftType": "Day"
+                        }
+                      ],
+                      "ShiftType": "Day"
+                    },
+                    {
+                      "Type": "Person",
+                      "Title": "Mayer B",
+                      "Subtitle": "non",
+                      "Layer": 3,
+                      "Children": [
+                        {
+                          "Type": "Person",
+                          "Title": "Sonya S",
+                          "Subtitle": "irure",
+                          "Layer": 4,
+                          "Children": [],
+                          "ShiftType": null
+                        },
+                        {
+                          "Type": "Person",
+                          "Title": "Jannie D",
+                          "Subtitle": "et",
+                          "Layer": 4,
+                          "Children": [],
+                          "ShiftType": null
+                        }
+                      ],
+                      "ShiftType": "Day"
+                    },
+                    {
+                      "Type": "Person",
+                      "Title": "Burke E",
+                      "Subtitle": "sit",
+                      "Layer": 3,
+                      "Children": [
+                        {
+                          "Type": "Person",
+                          "Title": "Head H",
+                          "Subtitle": "et",
+                          "Layer": 4,
+                          "Children": [],
+                          "ShiftType": "Night"
+                        },
+                        {
+                          "Type": "Person",
+                          "Title": "Alissa B",
+                          "Subtitle": "officia",
+                          "Layer": 4,
+                          "Children": [],
+                          "ShiftType": null
+                        }
+                      ],
+                      "ShiftType": "Night"
+                    }
+                  ],
+                  "ShiftType": "Night"
                 }
-              ]
+              ],
+              "ShiftType": "Night"
+            },
+            {
+              "Type": "Person",
+              "Title": "Leila H",
+              "Subtitle": "aliquip",
+              "Layer": 1,
+              "Children": [
+                {
+                  "Type": "Person",
+                  "Title": "Nolan H",
+                  "Subtitle": "consequat",
+                  "Layer": 2,
+                  "Children": [],
+                  "ShiftType": "Day"
+                },
+                {
+                  "Type": "Person",
+                  "Title": "Gabrielle F",
+                  "Subtitle": "culpa",
+                  "Layer": 2,
+                  "Children": [
+                    {
+                      "Type": "Person",
+                      "Title": "Medina C",
+                      "Subtitle": "sint",
+                      "Layer": 3,
+                      "Children": [
+                        {
+                          "Type": "Person",
+                          "Title": "Burgess N",
+                          "Subtitle": "non",
+                          "Layer": 4,
+                          "Children": [],
+                          "ShiftType": "Day"
+                        }
+                      ],
+                      "ShiftType": "Night"
+                    },
+                    {
+                      "Type": "Person",
+                      "Title": "Eunice L",
+                      "Subtitle": "proident",
+                      "Layer": 3,
+                      "Children": [],
+                      "ShiftType": "Night"
+                    },
+                    {
+                      "Type": "Person",
+                      "Title": "Patrice M",
+                      "Subtitle": "anim",
+                      "Layer": 3,
+                      "Children": [
+                        {
+                          "Type": "Person",
+                          "Title": "Stone S",
+                          "Subtitle": "aliqua",
+                          "Layer": 4,
+                          "Children": [],
+                          "ShiftType": null
+                        },
+                        {
+                          "Type": "Person",
+                          "Title": "Rice J",
+                          "Subtitle": "elit",
+                          "Layer": 4,
+                          "Children": [],
+                          "ShiftType": null
+                        },
+                        {
+                          "Type": "Person",
+                          "Title": "Betty N",
+                          "Subtitle": "adipisicing",
+                          "Layer": 4,
+                          "Children": [],
+                          "ShiftType": null
+                        }
+                      ],
+                      "ShiftType": "Night"
+                    }
+                  ],
+                  "ShiftType": "Night"
+                }
+              ],
+              "ShiftType": "Night"
+            },
+            {
+              "Type": "Person",
+              "Title": "Alicia J",
+              "Subtitle": "irure",
+              "Layer": 1,
+              "Children": [
+                {
+                  "Type": "Person",
+                  "Title": "Rowland H",
+                  "Subtitle": "irure",
+                  "Layer": 2,
+                  "Children": [],
+                  "ShiftType": null
+                },
+                {
+                  "Type": "Person",
+                  "Title": "Cash S",
+                  "Subtitle": "laborum",
+                  "Layer": 2,
+                  "Children": [
+                    {
+                      "Type": "Person",
+                      "Title": "Zimmerman M",
+                      "Subtitle": "officia",
+                      "Layer": 3,
+                      "Children": [
+                        {
+                          "Type": "Person",
+                          "Title": "Gibson T",
+                          "Subtitle": "officia",
+                          "Layer": 4,
+                          "Children": [],
+                          "ShiftType": "Night"
+                        },
+                        {
+                          "Type": "Person",
+                          "Title": "Sasha E",
+                          "Subtitle": "culpa",
+                          "Layer": 4,
+                          "Children": [],
+                          "ShiftType": "Day"
+                        }
+                      ],
+                      "ShiftType": "Night"
+                    }
+                  ],
+                  "ShiftType": null
+                },
+                {
+                  "Type": "Person",
+                  "Title": "Douglas H",
+                  "Subtitle": "reprehenderit",
+                  "Layer": 2,
+                  "Children": [
+                    {
+                      "Type": "Person",
+                      "Title": "Clarissa M",
+                      "Subtitle": "labore",
+                      "Layer": 3,
+                      "Children": [
+                        {
+                          "Type": "Person",
+                          "Title": "Bailey L",
+                          "Subtitle": "occaecat",
+                          "Layer": 4,
+                          "Children": [],
+                          "ShiftType": null
+                        },
+                        {
+                          "Type": "Person",
+                          "Title": "Fanny L",
+                          "Subtitle": "ex",
+                          "Layer": 4,
+                          "Children": [],
+                          "ShiftType": null
+                        },
+                        {
+                          "Type": "Person",
+                          "Title": "Wall R",
+                          "Subtitle": "consectetur",
+                          "Layer": 4,
+                          "Children": [],
+                          "ShiftType": null
+                        }
+                      ],
+                      "ShiftType": "Night"
+                    },
+                    {
+                      "Type": "Person",
+                      "Title": "Kelsey K",
+                      "Subtitle": "elit",
+                      "Layer": 3,
+                      "Children": [],
+                      "ShiftType": "Day"
+                    }
+                  ],
+                  "ShiftType": null
+                },
+                {
+                  "Type": "Person",
+                  "Title": "Marina P",
+                  "Subtitle": "et",
+                  "Layer": 2,
+                  "Children": [
+                    {
+                      "Type": "Person",
+                      "Title": "Maureen O",
+                      "Subtitle": "labore",
+                      "Layer": 3,
+                      "Children": [
+                        {
+                          "Type": "Person",
+                          "Title": "Hebert C",
+                          "Subtitle": "labore",
+                          "Layer": 4,
+                          "Children": [],
+                          "ShiftType": "Night"
+                        },
+                        {
+                          "Type": "Person",
+                          "Title": "Boyd S",
+                          "Subtitle": "cupidatat",
+                          "Layer": 4,
+                          "Children": [],
+                          "ShiftType": null
+                        }
+                      ],
+                      "ShiftType": "Night"
+                    },
+                    {
+                      "Type": "Person",
+                      "Title": "Dickson F",
+                      "Subtitle": "nisi",
+                      "Layer": 3,
+                      "Children": [
+                        {
+                          "Type": "Person",
+                          "Title": "Santana C",
+                          "Subtitle": "non",
+                          "Layer": 4,
+                          "Children": [],
+                          "ShiftType": "Day"
+                        },
+                        {
+                          "Type": "Person",
+                          "Title": "Leanna C",
+                          "Subtitle": "quis",
+                          "Layer": 4,
+                          "Children": [],
+                          "ShiftType": "Day"
+                        },
+                        {
+                          "Type": "Person",
+                          "Title": "Sybil G",
+                          "Subtitle": "pariatur",
+                          "Layer": 4,
+                          "Children": [],
+                          "ShiftType": "Day"
+                        },
+                        {
+                          "Type": "Person",
+                          "Title": "Underwood A",
+                          "Subtitle": "cillum",
+                          "Layer": 4,
+                          "Children": [],
+                          "ShiftType": "Day"
+                        },
+                        {
+                          "Type": "Person",
+                          "Title": "Dejesus F",
+                          "Subtitle": "occaecat",
+                          "Layer": 4,
+                          "Children": [],
+                          "ShiftType": "Night"
+                        },
+                        {
+                          "Type": "Person",
+                          "Title": "Jewel O",
+                          "Subtitle": "cillum",
+                          "Layer": 4,
+                          "Children": [],
+                          "ShiftType": "Day"
+                        }
+                      ],
+                      "ShiftType": null
+                    },
+                    {
+                      "Type": "Person",
+                      "Title": "Calhoun K",
+                      "Subtitle": "irure",
+                      "Layer": 3,
+                      "Children": [
+                        {
+                          "Type": "Person",
+                          "Title": "Joan B",
+                          "Subtitle": "proident",
+                          "Layer": 4,
+                          "Children": [],
+                          "ShiftType": "Night"
+                        },
+                        {
+                          "Type": "Person",
+                          "Title": "House B",
+                          "Subtitle": "deserunt",
+                          "Layer": 4,
+                          "Children": [],
+                          "ShiftType": "Night"
+                        },
+                        {
+                          "Type": "Person",
+                          "Title": "Isabella J",
+                          "Subtitle": "esse",
+                          "Layer": 4,
+                          "Children": [],
+                          "ShiftType": null
+                        },
+                        {
+                          "Type": "Person",
+                          "Title": "Casandra K",
+                          "Subtitle": "nulla",
+                          "Layer": 4,
+                          "Children": [],
+                          "ShiftType": "Night"
+                        },
+                        {
+                          "Type": "Person",
+                          "Title": "Emilia M",
+                          "Subtitle": "fugiat",
+                          "Layer": 4,
+                          "Children": [],
+                          "ShiftType": null
+                        },
+                        {
+                          "Type": "Person",
+                          "Title": "Earlene V",
+                          "Subtitle": "nostrud",
+                          "Layer": 4,
+                          "Children": [],
+                          "ShiftType": null
+                        }
+                      ],
+                      "ShiftType": "Day"
+                    },
+                    {
+                      "Type": "Person",
+                      "Title": "Navarro A",
+                      "Subtitle": "id",
+                      "Layer": 3,
+                      "Children": [
+                        {
+                          "Type": "Person",
+                          "Title": "Ramirez G",
+                          "Subtitle": "consequat",
+                          "Layer": 4,
+                          "Children": [],
+                          "ShiftType": "Day"
+                        },
+                        {
+                          "Type": "Person",
+                          "Title": "Kerry D",
+                          "Subtitle": "ullamco",
+                          "Layer": 4,
+                          "Children": [],
+                          "ShiftType": "Night"
+                        }
+                      ],
+                      "ShiftType": null
+                    },
+                    {
+                      "Type": "Person",
+                      "Title": "Virgie L",
+                      "Subtitle": "labore",
+                      "Layer": 3,
+                      "Children": [
+                        {
+                          "Type": "Person",
+                          "Title": "Nettie B",
+                          "Subtitle": "deserunt",
+                          "Layer": 4,
+                          "Children": [],
+                          "ShiftType": "Night"
+                        },
+                        {
+                          "Type": "Person",
+                          "Title": "Hurley M",
+                          "Subtitle": "ad",
+                          "Layer": 4,
+                          "Children": [],
+                          "ShiftType": "Day"
+                        }
+                      ],
+                      "ShiftType": "Day"
+                    }
+                  ],
+                  "ShiftType": null
+                }
+              ],
+              "ShiftType": "Night"
             }
-          ]
-        },
-        "Item": {
-          "Type": "Person",
-          "Title": "Malone L",
-          "Subtitle": "amet",
-          "Layer": 0,
-          "Children": [],
+          ],
           "ShiftType": null
         }
       }).Root as any);
-      window.addEventListener('resize', () => this.cdr.detectChanges());
+      window.addEventListener('resize', this.ngAfterViewInit);
       this.parent.nativeElement.classList.add('scroll-root');
     }
   }
   ngAfterViewInit() {
     this.cdr.detectChanges();
+  }
+  ngOnDestroy() {
+    window.removeEventListener('resize', this.ngAfterViewInit)
   }
 }

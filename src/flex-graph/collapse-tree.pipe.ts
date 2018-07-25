@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { Graph } from './flex-graph.component';
+import { Graph } from './common';
 
 @Pipe({
     name: 'shouldCollapse'

@@ -5,9 +5,10 @@
     justify-content: center;
     text-align: center;
     padding: 0px 12px;
-    height: 140px;
 }
-multiple-element-node:host {
+multiple-element-node:host,
+building-node:host,
+client-node:host {
     height: auto;
 }
 blank-node:host {
@@ -19,7 +20,6 @@ blank-node:host {
 building-node:host {
     flex-direction: row;
     justify-content: space-between;
-    height: auto;
     min-width: 210px;
     padding: 4px 16px;
     border: 1px solid #c4c4c4;

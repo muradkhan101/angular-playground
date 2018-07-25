@@ -7,6 +7,7 @@ import { Component, Input } from '@angular/core';
         <blank-node *ngIf="tree.Type === 'Blank'" [tree]="tree"></blank-node>
         <site-node *ngIf="tree.Type === 'Site'" [tree]="tree"></site-node>
         <building-node *ngIf="tree.Type === 'Building'" [tree]="tree"></building-node>
+        <client-node *ngIf="tree.Type === 'Client'" [tree]="tree"></client-node>
     `,
     styleUrls: ['./node.scss']
 })
