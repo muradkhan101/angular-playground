@@ -9,13 +9,24 @@
 }
 multiple-element-node:host {
     height: auto;
-    min-height: 140px;
 }
 blank-node:host {
     margin: 0 auto;
     padding: 0;
     width: 1px;
     background: #c4c4c4;
+}
+building-node:host {
+    flex-direction: row;
+    justify-content: space-between;
+    height: auto;
+    min-width: 210px;
+    padding: 4px 16px;
+    border: 1px solid #c4c4c4;
+    border-radius: 2px;
+    .node-title {
+        padding: 0 4px;
+    }
 }
 .node-title {
     font-size: 14px;

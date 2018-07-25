@@ -4,6 +4,7 @@ export * from './collapsed-graph/collapsed-graph.component';
 export * from './nodes/building-node.component';
 export * from './nodes/client-node.component';
 export * from './nodes/person-node.component';
+export * from './nodes/site-node.component';
 export * from './nodes/blank-node.component';
 export * from './nodes/node-renderer.component';
 export * from './nodes/multiple-element-node.component';
