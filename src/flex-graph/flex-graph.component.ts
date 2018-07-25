@@ -1,11 +1,11 @@
 import {
+  AfterViewInit,
+  ChangeDetectorRef,
   Component,
+  ElementRef,
   Input,
   OnInit,
-  ElementRef,
-  ChangeDetectorRef,
   ViewChild,
-  AfterViewInit,
 } from '@angular/core';
 
 declare const window: Window;
@@ -21,7 +21,7 @@ export class FlexGraphComponent extends BaseGraphComponent implements OnInit, Af
   @Input() tree: Graph;
   @Input() isRoot: boolean = false;
   @ViewChild('children') childNodes: ElementRef;
-  
+
   constructor(
     parent: ElementRef,
     cdr: ChangeDetectorRef,

@@ -51,8 +51,9 @@ export class CollapsedGraphComponent extends BaseGraphComponent implements OnIni
     if (shouldToggle) {
       this.state.isCollapsed = !this.state.isCollapsed;
       this.cdr.detectChanges();
-      // Makes connectors resize sine flex-graph is listening for the event
-      window.dispatchEvent(new Event('resize'));
+
+      // Makes connectors resize since flex-graph is listening for the event
+      setTimeout(() => window.dispatchEvent(new Event('resize')), 0);
     }
   }
 }

@@ -65,14 +65,14 @@ import { GraphNodeComponent, EfficientTreeComponent } from '../graph';
 import { TimeDurationPipe } from './time-duration.pipe';
 import {
   FlexGraphComponent,
-  BuildingNodeComponent,
+  SiteNodeComponent,
   ClientNodeComponent,
   PersonNodeComponent,
   BlankNodeComponent,
   ShouldCollapsePipe,
   NodeRendererComponent,
   MultipleElementNodeComponent,
-  SiteNodeComponent,
+  DistrictNodeComponent,
 } from '../flex-graph';
 import { CollapsedGraphComponent } from '../flex-graph';
 import { AttributeSelectorComponent } from './attribute-selector/attribute-selector.component';
@@ -119,7 +119,7 @@ import { AttributeSelectorComponent } from './attribute-selector/attribute-selec
     GraphNodeComponent,
     EfficientTreeComponent,
     FlexGraphComponent,
-    BuildingNodeComponent,
+    SiteNodeComponent,
     ClientNodeComponent,
     PersonNodeComponent,
     BlankNodeComponent,
@@ -128,7 +128,7 @@ import { AttributeSelectorComponent } from './attribute-selector/attribute-selec
     AttributeSelectorComponent,
     NodeRendererComponent,
     MultipleElementNodeComponent,
-    SiteNodeComponent,
+    DistrictNodeComponent,
   ],
   imports: [
     BrowserModule,
