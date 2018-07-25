@@ -9,6 +9,7 @@
       (click)="toggleCollapse(children.children[0].children.length > 0  && childCollection.length > 1)"
       [ngClass]="{pointer: children.children[0].children.length > 0  && childCollection.length > 1}">
       <multiple-element-node
+        [class]="tree | selectedClass:{}"
         [size]="childCollection.length > 5 ? 1 : 1.25"
         [title]="state.title"
         [subtitle]="state.subtitle"
@@ -44,7 +45,10 @@
       <div class="node-content"
         (click)="toggleCollapse(true)"
         [ngClass]="{pointer: children.children[0].children.length > 0 || !state.isCollapsed}">
-        <node-renderer [size]="childCollection.length > 5 ? 1 : 1.25" [tree]="tree"></node-renderer>
+        <node-renderer
+          [class]="tree | selectedClass:{}"
+          [size]="childCollection.length > 5 ? 1 : 1.25"
+          [tree]="tree"></node-renderer>
         <div class="toggle-container" *ngIf="children.children[0].children.length > 0 || !state.isCollapsed">
           <div class="toggle toggle-close">
             <i class="zmdi zmdi-minus-circle"></i>

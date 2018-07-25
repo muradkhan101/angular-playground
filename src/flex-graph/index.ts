@@ -1,5 +1,5 @@
 export * from './flex-graph.component';
-export * from './collapse-tree.pipe';
+export * from './pipes';
 export * from './collapsed-graph/collapsed-graph.component';
 export * from './nodes/site-node.component';
 export * from './nodes/client-node.component';

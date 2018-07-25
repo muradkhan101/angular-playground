@@ -11,6 +11,15 @@ flex-graph:host {
 .node-content {
     display: inline-block;
     position: relative;
+    &.node-not-selected {
+        filter: opacity(65%);
+    }
+    &.node-selected {
+        filter: drop-shadow(0px 0px 4px rgba(55, 55, 55, 0.6));
+        &::ng-deep {
+            .toggle-container { background: transparent; }
+        }
+    }
     // padding: 12px 16px;
     // margin: 8px 12px;
 }

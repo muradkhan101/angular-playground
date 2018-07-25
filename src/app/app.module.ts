@@ -73,6 +73,8 @@ import {
   NodeRendererComponent,
   MultipleElementNodeComponent,
   DistrictNodeComponent,
+  SelectedClassPipe,
+  NodeInTreePipe,
 } from '../flex-graph';
 import { CollapsedGraphComponent } from '../flex-graph';
 import { AttributeSelectorComponent } from './attribute-selector/attribute-selector.component';
@@ -129,6 +131,8 @@ import { AttributeSelectorComponent } from './attribute-selector/attribute-selec
     NodeRendererComponent,
     MultipleElementNodeComponent,
     DistrictNodeComponent,
+    SelectedClassPipe,
+    NodeInTreePipe,
   ],
   imports: [
     BrowserModule,

@@ -1,6 +1,6 @@
 import { ElementRef, ChangeDetectorRef } from '@angular/core';
 
-type NodeType = 'Person' | 'Building' | 'Client' | 'District' | 'Blank' | 'Site';
+export type NodeType = 'Person' | 'Building' | 'Client' | 'District' | 'Blank' | 'Site';
 
 export interface Graph {
     Type: NodeType;

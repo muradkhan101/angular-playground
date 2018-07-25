@@ -32,8 +32,9 @@ export class FlexGraphComponent extends BaseGraphComponent implements OnInit, Af
   
   private processTreeForGaps(tree: Graph): Graph {
     let currentLevel = tree.Layer;
-    let newChildren = tree.Children.map((child) => {
-      if (child.Layer !== currentLevel + 1) {
+    let newChildren = tree.Children.map((child, i, childArray) => {
+      let nextChildLayer = childArray[(i + 1) % childArray.length].Layer;
+      if (child.Layer !== nextChildLayer && child.Layer > nextChildLayer) {
         let fillerLayer = { Type: 'Blank', Layer: currentLevel + 1, Children: [] } as any;
         fillerLayer.Children.push(child);
         return fillerLayer;
