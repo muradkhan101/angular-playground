@@ -44,7 +44,7 @@
       <div class="node-content"
         (click)="toggleCollapse(true)"
         [ngClass]="{pointer: children.children[0].children.length > 0 || !state.isCollapsed}">
-        <node-renderer [tree]="tree"></node-renderer>
+        <node-renderer [size]="childCollection.length > 5 ? 1 : 1.25" [tree]="tree"></node-renderer>
         <div class="toggle-container" *ngIf="children.children[0].children.length > 0 || !state.isCollapsed">
           <div class="toggle toggle-close">
             <i class="zmdi zmdi-minus-circle"></i>
@@ -53,7 +53,7 @@
       </div>
   
       <div class="bottom-connector"
-        *ngIf="children.children[0].children.length > 0">
+        *ngIf="children.children[0].children.length > 0 && tree.Type !== 'District'">
       </div>
   
       <div class="wide-connector" #wideConnector

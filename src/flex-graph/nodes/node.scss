@@ -17,15 +17,33 @@ blank-node:host {
     width: 1px;
     background: #c4c4c4;
 }
-building-node:host {
+client-node:host {
+    .node-icon {
+        line-height: 0;
+        margin-bottom: 12px;
+    }
+}
+site-node:host {
     flex-direction: row;
-    justify-content: space-between;
-    min-width: 210px;
-    padding: 4px 16px;
-    border: 1px solid #c4c4c4;
-    border-radius: 2px;
-    .node-title {
-        padding: 0 4px;
+    padding: 0;
+    margin: 0;
+    .site-node-wrapper {
+        flex-direction: row;
+        justify-content: space-between;
+        min-width: 210px;
+        padding: 4px 16px;
+        border: 1px solid #c4c4c4;
+        border-radius: 2px;
+        &.node-selected {
+            border: 1px solid #40C4DD;
+            background-color: #40C4DD;
+            .node-title,
+            .node-subtitle,
+            .node-icon { color: white; }
+        }
+        .node-title {
+            padding: 0 4px;
+        }
     }
 }
 .node-title {

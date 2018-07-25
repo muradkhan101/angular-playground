@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
     selector: 'district-node',
@@ -12,7 +12,12 @@ import { Component, Input } from '@angular/core';
     </div>`,
     styleUrls: ['./node.scss']
 })
-export class DistrictNodeComponent {
-    @Input() size = 1.5;
+export class DistrictNodeComponent implements OnInit {
+    @Input() size;
     @Input() tree;
+    @Input() isSelected: boolean;
+
+    ngOnInit() {
+        if (!this.size) this.size = 1.5;
+    }
 }

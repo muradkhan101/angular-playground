@@ -1,6 +1,7 @@
 import {
     Component,
-    Input
+    Input,
+    OnInit
 } from '@angular/core';
 
 @Component({
@@ -18,7 +19,12 @@ import {
     styles: [``],
     styleUrls: ['./node.scss']
 })
-export class PersonNodeComponent {
-    @Input() size = 2;
+export class PersonNodeComponent implements OnInit {
+    @Input() size;
     @Input() tree;
+    @Input() isSelected: boolean;
+
+    ngOnInit() {
+        if (!this.size) this.size = 2;
+    }
 }

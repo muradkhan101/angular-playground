@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
     selector: 'client-node',
@@ -13,7 +13,12 @@ import { Component, Input } from '@angular/core';
     `,
     styleUrls: ['./node.scss']
 })
-export class ClientNodeComponent {
-    @Input() size = 1.2;
+export class ClientNodeComponent implements OnInit {
+    @Input() size;
     @Input() tree;
+    @Input() isSelected: boolean;
+
+    ngOnInit() {
+        if (!this.size) this.size = 1.2;
+    }
 }

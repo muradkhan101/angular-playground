@@ -5,7 +5,7 @@
   node-renderer [tree]="tree">
 </div>
 <div class="bottom-connector"
-   *ngIf="children.children[0].children.length > 0"
+   *ngIf="children.children[0].children.length > 0  && tree.Type !== 'District' && tree.Type !== 'Client'"
 ></div>
 <div class="wide-connector" #wideConnector
   *ngIf="children.children[0].children.length > 0"
