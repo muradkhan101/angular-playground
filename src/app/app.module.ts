@@ -78,6 +78,7 @@ import {
 } from '../flex-graph';
 import { CollapsedGraphComponent } from '../flex-graph';
 import { AttributeSelectorComponent } from './attribute-selector/attribute-selector.component';
+import { CarouselModule } from './carousel/carousel.module';
 
 @NgModule({
   declarations: [
@@ -133,6 +134,7 @@ import { AttributeSelectorComponent } from './attribute-selector/attribute-selec
     DistrictNodeComponent,
     SelectedClassPipe,
     NodeInTreePipe,
+    SiteNodeComponent,
   ],
   imports: [
     BrowserModule,
@@ -144,6 +146,7 @@ import { AttributeSelectorComponent } from './attribute-selector/attribute-selec
     EffectsModule.forRoot(effects),
     AgmCoreModule.forRoot({ apiKey: 'AIzaSyCGSBIO0mqqVSvOBQkGPw2CeeMNjPitykI'}),
     NgbModule.forRoot(),
+    CarouselModule,
   ],
   providers: [WebsocketService, ObservableService, OtherService, AsyncService],
   bootstrap: [AppComponent],

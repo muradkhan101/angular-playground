@@ -1,0 +1,27 @@
+.carousel-contaienr {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+}
+.carousel-items {
+    display: flex;
+    align-items: center;
+}
+.carousel-pickers {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    bottom: 8px;
+}
+.picker {
+    width: 16px;
+    height: 16px;
+    margin: 0 4px;
+    background: rgba(255, 255, 255, 0.6);
+    &.active-picker {
+        background: rgba(255, 255, 255, 1);
+    }
+}

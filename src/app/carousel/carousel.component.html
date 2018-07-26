@@ -1,0 +1,12 @@
+<div class="carousel-container">
+  <div class="carousel-items" #items>
+    <ng-content></ng-content>
+  </div>
+  <div class="carousel-pickers">
+    <div
+      class="picker"
+      *ngFor="let item of state.items"
+      (click)="moveToItem(item.index)"
+      [ngClass]="{'active-picker': (state.position | async) === item.index}"></div>
+  </div>
+</div>
