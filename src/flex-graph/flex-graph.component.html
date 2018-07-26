@@ -1,7 +1,7 @@
 <div class="top-connector"
   *ngIf="!isRoot"
 ></div>
-<div [class]="'node-content' + (tree | selectedClass:{})"
+<div [class]="'node-content ' + (tree | selectedClass:state.store)"
   node-renderer [tree]="tree">
 </div>
 <div class="bottom-connector"

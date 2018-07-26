@@ -10,7 +10,11 @@ import {
 
 declare const window: Window;
 
+import { Store } from '@ngrx/store';
+
 import { BaseGraphComponent, Graph} from './common';
+import { StoreState, graphSelector } from './store';
+
 
 @Component({
   selector: 'flex-graph',
@@ -22,9 +26,13 @@ export class FlexGraphComponent extends BaseGraphComponent implements OnInit, Af
   @Input() isRoot: boolean = false;
   @ViewChild('children') childNodes: ElementRef;
 
+  state = {
+    store: {}
+  }
   constructor(
     parent: ElementRef,
     cdr: ChangeDetectorRef,
+    private store: Store<StoreState>,
   ) {
     super(parent, cdr);
     this.ngAfterViewInit = this.ngAfterViewInit.bind(this);
@@ -53,6 +61,7 @@ export class FlexGraphComponent extends BaseGraphComponent implements OnInit, Af
   //   wideLine.style.width = width + 'px';
   // }
   ngOnInit() {
+    this.state.store = this.store.select(graphSelector).subscribe(store => this.state.store = store);
     if (this.isRoot) {
       this.tree = this.processTreeForGaps(({
         "Root": {

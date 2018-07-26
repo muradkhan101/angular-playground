@@ -3,13 +3,20 @@
 
 <!-- Render collapsed graph component -->
 <ng-container *ngIf="renderCollapsed">
+  <!-- Collapsed state, renders nodes based on collapsedChildren array -->
   <div class="wrapper" *ngIf="state.isCollapsed">
     <div class="top-connector"></div>
+     <!-- children.children[0].children.length > 0 && childCollection.length > 2
+          Means something is rendered in the #children div below
+          and those things have more than 1 child
+          Basically, only allow collapsing when there is something there and there is more than 1 of it -->
     <div class="node-content"
       (click)="toggleCollapse(children.children[0].children.length > 0  && childCollection.length > 1)"
       [ngClass]="{pointer: children.children[0].children.length > 0  && childCollection.length > 1}">
+      <!-- Only the leaf nodes with employee sets need clickability, might be a layer restriction too -->
       <multiple-element-node
-        [class]="tree | selectedClass:{}"
+        (click)="getEmployeeData(childCollection, children.children[0].children.length === 0)"
+        [class]="childCollection | selectedClass:state.store"
         [size]="childCollection.length > 5 ? 1 : 1.25"
         [title]="state.title"
         [subtitle]="state.subtitle"
@@ -38,18 +45,17 @@
       </div>
     </div>
   </div>
-
+  <!-- Uncollapsed state, renders each child node individually -->
   <ng-container *ngIf="!state.isCollapsed">
     <div class="wrapper" *ngFor="let tree of childCollection">
       <div class="top-connector"></div>
-      <div class="node-content"
-        (click)="toggleCollapse(true)"
-        [ngClass]="{pointer: children.children[0].children.length > 0 || !state.isCollapsed}">
+      <div class="node-content pointer"
+        (click)="toggleCollapse(true)">
         <node-renderer
-          [class]="tree | selectedClass:{}"
+          [class]="tree | selectedClass:state.store"
           [size]="childCollection.length > 5 ? 1 : 1.25"
           [tree]="tree"></node-renderer>
-        <div class="toggle-container" *ngIf="children.children[0].children.length > 0 || !state.isCollapsed">
+        <div class="toggle-container">
           <div class="toggle toggle-close">
             <i class="zmdi zmdi-minus-circle"></i>
           </div>

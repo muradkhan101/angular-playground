@@ -1,15 +1,11 @@
 import { Graph } from '../common';
-import { Action } from '@ngrx/store';
 
-export const SELECT_NODE = 'SELECT_NODE';
-export const DESELECT_ALL = 'DESELECT_ALL';
+import { SELECT_NODE, DESELECT_ALL, GraphAction } from './actions';
 
-interface GraphPayload {
-    Node: Graph;
-}
 
-interface GraphAction extends Action {
-    payload: GraphPayload;
+export interface StoreState {
+    selection: Graph | Array<Graph>;
+    hasSelection: boolean;
 }
 
 const initialState = {
@@ -20,10 +16,10 @@ const initialState = {
 export function graphReducer(state = initialState, action: GraphAction) {
     switch (action.type) {
         case (SELECT_NODE): {
-            return Object.assign({}, state, {selected: action.payload.Node, hasSelection: true});
+            return Object.assign({}, state, { selection: action.payload.Node, hasSelection: true} );
         }
         case (DESELECT_ALL): {
-            return Object.assign({}, state, {selected: null, hasSelection: false});
+            return Object.assign({}, state, { selection: null, hasSelection: false} );
         }
     }
     return state;

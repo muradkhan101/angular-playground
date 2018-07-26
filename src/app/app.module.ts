@@ -50,7 +50,6 @@ import {
 } from '../dynamic-table/new-table';
 
 import { StoreModule } from '@ngrx/store';
-import { toDo } from '../store/store.reducers';
 import { EffectsModule } from '@ngrx/effects';
 import { effects } from '../store/store.effects';
 import { TodoComponent } from '../store/todo.component';
@@ -77,6 +76,7 @@ import {
   NodeInTreePipe,
 } from '../flex-graph';
 import { CollapsedGraphComponent } from '../flex-graph';
+import { graphReducer } from '../flex-graph/store';
 import { AttributeSelectorComponent } from './attribute-selector/attribute-selector.component';
 import { CarouselModule } from './carousel/carousel.module';
 
@@ -142,7 +142,7 @@ import { CarouselModule } from './carousel/carousel.module';
     ReactiveFormsModule,
     HttpClientModule,
     DatePillPickerModule,
-    StoreModule.forRoot({toDo: toDo}),
+    StoreModule.forRoot({graph: graphReducer}),
     EffectsModule.forRoot(effects),
     AgmCoreModule.forRoot({ apiKey: 'AIzaSyCGSBIO0mqqVSvOBQkGPw2CeeMNjPitykI'}),
     NgbModule.forRoot(),

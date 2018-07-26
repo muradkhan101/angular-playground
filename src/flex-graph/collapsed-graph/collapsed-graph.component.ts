@@ -7,6 +7,8 @@ import {
 } from '@angular/core';
 import { BaseGraphComponent, Graph } from '../common';
 
+import { Store } from '@ngrx/store';
+import { StoreState, SelectNodeAction, DeselectAllAction, graphSelector } from '../store';
 @Component({
   selector: '[collapsed-graph]',
   templateUrl: './collapsed-graph.component.html',
@@ -23,10 +25,12 @@ export class CollapsedGraphComponent extends BaseGraphComponent implements OnIni
     subtitle: '',
     collapsedChildren: [],
     isCollapsed: true,
+    store: {},
   }
   constructor(
     parent: ElementRef,
     cdr: ChangeDetectorRef,
+    private store: Store<StoreState>,
   ) { super(parent, cdr); }
 
   ngOnInit() {
@@ -40,6 +44,7 @@ export class CollapsedGraphComponent extends BaseGraphComponent implements OnIni
         || (this.childCollection[1] && this.childCollection[1].Subtitle);
       this.state.collapsedChildren = this.collapseChildren(this.childCollection);
     }
+    this.state.store = this.store.select(graphSelector).subscribe(store => this.state.store = store);
   }
   private collapseChildren(children: Array<Graph>): Array<Graph> {
     return children.reduce(( collection: Array<Graph>, child ) => {
@@ -49,11 +54,20 @@ export class CollapsedGraphComponent extends BaseGraphComponent implements OnIni
   }
   toggleCollapse(shouldToggle) {
     if (shouldToggle) {
+      this.store.dispatch(new DeselectAllAction());
+
       this.state.isCollapsed = !this.state.isCollapsed;
       this.cdr.detectChanges();
 
       // Makes connectors resize since flex-graph is listening for the event
       setTimeout(() => window.dispatchEvent(new Event('resize')), 0);
+    }
+  }
+
+  // Does AJAX for sidebar and passes data to sidebar
+  getEmployeeData(employees, isLeaf) {
+    if (isLeaf) {
+      this.store.dispatch(new SelectNodeAction(employees));
     }
   }
 }
