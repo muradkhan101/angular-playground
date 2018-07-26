@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { CarouselComponent } from './carousel.component';
-import { CarouselDirective } from './carousel.directive';
+import { CarouselItemComponent } from './carousel-item.component';
 import { CarouselService } from './carousel.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -13,14 +13,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     ],
     declarations: [
         CarouselComponent,
-        CarouselDirective,
+        CarouselItemComponent,
     ],
     providers: [
         CarouselService
     ],
     exports: [
         CarouselComponent,
-        CarouselDirective,
+        CarouselItemComponent,
     ]
 })
 export class CarouselModule {}

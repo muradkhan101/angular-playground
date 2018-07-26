@@ -39,11 +39,13 @@ const ANIMATION = '150ms ease-out';
         ])
     ]
 })
-export class CarouselDirective implements OnInit {
+export class CarouselItemComponent implements OnInit {
     private index: number;
-    private carouselState: CarouselState;
+    carouselState: CarouselState;
     subscription: Subscription;
-    constructor(private carousel: CarouselService) {}
+    constructor(
+        private carousel: CarouselService,
+    ) {}
 
     ngOnInit() {
         this.index = this.carousel.assignIndex();
