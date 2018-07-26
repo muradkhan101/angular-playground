@@ -23,9 +23,10 @@ const ANIMATION = '150ms ease-out';
     </div>`,
     animations: [
         trigger('carouselState', [
-            state('VISIBLE', style({transform: 'translateX(0)', filter: 'opacity(1)', zIndex: '10'})),
-            state('LEFT', style({transform: 'translate3d(-25%, 0, -100px)', filter: 'opacity(0.6)', zIndex: '5'})),
-            state('RIGHT', style({transform: 'translate3d(-25%, 0, -100px)', filter: 'opacity(0.6)', zIndex: '5'})),
+            state('VISIBLE', style({transform: 'translateX(0)', filter: 'opacity(1)', zIndex: '10', position: 'relative', order: '2' })),
+            state('LEFT', style({ transform: 'translate3d(-10%, 0, -150px)', filter: 'opacity(0.6)', zIndex: '5', position: 'relative', order: '1'})),
+            state('RIGHT', style({ transform: 'translate3d(10%, 0, -150px)', filter: 'opacity(0.6)', zIndex: '5', position: 'relative', order: '3'})),
+            state('NOT_VISIBLE', style({position: 'absolute', filter: 'opacity(0)'})),
             transition('LEFT <=> VISIBLE', animate(ANIMATION)),
             transition('RIGHT <=> VISIBLE', animate(ANIMATION)),
             transition('void <=> LEFT', [
