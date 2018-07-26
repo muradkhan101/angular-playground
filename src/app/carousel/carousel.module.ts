@@ -17,6 +17,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     ],
     providers: [
         CarouselService
+    ],
+    exports: [
+        CarouselComponent,
+        CarouselDirective,
     ]
 })
 export class CarouselModule {}

@@ -12,12 +12,14 @@ export class CarouselService {
     get count(): BehaviorSubject<number> { return this.currentCount; }
 
     assignIndex(): number {
-        return this.itemCount++;
+        let nextIndex = this.itemCount++;
+        this.currentCount.next(nextIndex);
+        return nextIndex;
     }
     getItemState(itemIndex: number): CarouselState {
         if (this.activeIndex === itemIndex) return 'VISIBLE';
-        if (this.activeIndex === this.getNextIndex(itemIndex, 1)) return 'RIGHT';
-        if (this.activeIndex === this.getNextIndex(itemIndex, -1)) return 'LEFT';
+        if (this.activeIndex === this.getNextIndex(itemIndex, 1)) return 'LEFT';
+        if (this.activeIndex === this.getNextIndex(itemIndex, -1)) return 'RIGHT';
         return 'NOT_VISIBLE';
     }
     move(direction: 1 | -1) {

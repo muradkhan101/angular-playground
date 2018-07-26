@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-
 import {
     trigger,
     state,
@@ -7,6 +6,8 @@ import {
     animate,
     transition
 } from '@angular/animations';
+
+import { combineLatest } from 'rxjs/observable/combineLatest';
 import { Subscription } from 'rxjs/Subscription';
 
 import { CarouselService } from './carousel.service';
@@ -15,7 +16,7 @@ import { CarouselState } from './common';
 const ANIMATION = '150ms ease-out';
 
 @Component({
-    selector: '[mk-carousel-item]',
+    selector: 'mk-carousel-item,[mk-carousel-item]',
     template: `
     <div [@carouselState]="carouselState">
         <ng-content></ng-content>
@@ -46,9 +47,8 @@ export class CarouselDirective implements OnInit {
 
     ngOnInit() {
         this.index = this.carousel.assignIndex();
-        this.subscription = this.carousel.state.subscribe((currentIndex) => {
+        this.subscription = combineLatest( this.carousel.state, this.carousel.count).subscribe((currentIndex) => {
            this.carouselState = this.carousel.getItemState(this.index);
         });
-        console.log(this.index);
     }
 }

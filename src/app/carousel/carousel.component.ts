@@ -22,7 +22,7 @@ export class CarouselComponent implements OnInit {
   ngOnInit() {
     this.state.position = this.carouselService.state;
     this.carouselService.count.subscribe(newCount => {
-      this.state.items = Array.from({length: newCount}).map((_, i) => ({index: i}));
+      this.state.items = Array.from({length: newCount + 1}).map((_, i) => ({index: i}));
     })
   }
   moveToItem(index) {
