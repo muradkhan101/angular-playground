@@ -36,7 +36,6 @@ export class NodeInTreePipe implements PipeTransform {
 })
 export class SelectedClassPipe implements PipeTransform {
     transform(node: Graph | Array<Graph>, state) {
-        console.log(node, state, node === state.selection)
         if (!state.hasSelection) return '';
         return state.selection === node
             ? 'node-selected'
