@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostBinding, OnInit } from '@angular/core';
 import {
     trigger,
     state,
@@ -17,16 +17,17 @@ const ANIMATION = '150ms ease-out';
 
 @Component({
     selector: 'mk-carousel-item,[mk-carousel-item]',
-    template: `
-    <div [@carouselState]="carouselState">
-        <ng-content></ng-content>
-    </div>`,
+    template: `<ng-content></ng-content>`,
+    styles: [`
+    .item{
+        position: absolute;
+    }`],
     animations: [
         trigger('carouselState', [
-            state('VISIBLE', style({transform: 'translateX(0)', filter: 'opacity(1)', zIndex: '10', position: 'relative', order: '2' })),
-            state('LEFT', style({ transform: 'translate3d(-10%, 0, -150px)', filter: 'opacity(0.6)', zIndex: '5', position: 'relative', order: '1'})),
-            state('RIGHT', style({ transform: 'translate3d(10%, 0, -150px)', filter: 'opacity(0.6)', zIndex: '5', position: 'relative', order: '3'})),
-            state('NOT_VISIBLE', style({position: 'absolute', filter: 'opacity(0)'})),
+            state('VISIBLE', style({transform: 'translateX(0)', filter: 'opacity(1)', zIndex: '10', order: '2' })),
+            state('LEFT', style({ transform: 'translate3d(-10%, 0, -150px)', filter: 'opacity(0.6)', zIndex: '5', order: '1' })),
+            state('RIGHT', style({ transform: 'translate3d(10%, 0, -150px)', filter: 'opacity(0.6)', zIndex: '5', order: '3' })),
+            state('NOT_VISIBLE', style({ filter: 'opacity(0)', zIndex: 1, order: 4 })),
             transition('LEFT <=> VISIBLE', animate(ANIMATION)),
             transition('RIGHT <=> VISIBLE', animate(ANIMATION)),
             transition('void <=> LEFT', [
@@ -41,6 +42,7 @@ const ANIMATION = '150ms ease-out';
     ]
 })
 export class CarouselItemComponent implements OnInit {
+    @HostBinding('@carouselState') get carouselAnimation() { return this.carouselState; }
     private index: number;
     carouselState: CarouselState;
     subscription: Subscription;
