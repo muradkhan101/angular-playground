@@ -65,7 +65,7 @@ import { TimeDurationPipe } from './time-duration.pipe';
 import {
   FlexGraphComponent,
   SiteNodeComponent,
-  ClientNodeComponent,
+  AltDistrictNodeComponent,
   PersonNodeComponent,
   BlankNodeComponent,
   ShouldCollapsePipe,
@@ -123,7 +123,7 @@ import { CarouselModule } from './carousel/carousel.module';
     EfficientTreeComponent,
     FlexGraphComponent,
     SiteNodeComponent,
-    ClientNodeComponent,
+    AltDistrictNodeComponent,
     PersonNodeComponent,
     BlankNodeComponent,
     ShouldCollapsePipe,

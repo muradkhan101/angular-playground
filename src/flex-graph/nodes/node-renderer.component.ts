@@ -7,7 +7,7 @@ import { Component, Input } from '@angular/core';
         <blank-node *ngIf="tree.Type === 'Blank'" [tree]="tree"></blank-node>
         <district-node *ngIf="tree.Type === 'District'" [size]="size" [tree]="tree"></district-node>
         <site-node *ngIf="tree.Type === 'Site'" [tree]="tree"></site-node>
-        <client-node *ngIf="tree.Type === 'Client'" [size]="size" [tree]="tree"></client-node>
+        <alt-district-node *ngIf="tree.Type === '???'" [size]="size" [tree]="tree"></alt-district-node>
     `,
     styleUrls: ['./node.scss']
 })

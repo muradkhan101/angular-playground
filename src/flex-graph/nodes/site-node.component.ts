@@ -1,29 +1,24 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
     selector: 'site-node',
     template: `
-    <div class="site-node-wrapper" [ngClass]="{'node-selected': isSelected}">
-        <div class="node-icon">
-            <i
-            class="zmdi zmdi-city-alt"
-            [style.fontSize]="'0.75em'"></i>
-        </div>
-        <div class="node-text">
-            <div class="node-title">
-                {{tree.Title}} - {{tree.Subtitle}} ({{tree.Children.length}})
-            </div> 
-        </div>
-        <div class="">
-            <i
-            [style.fontSize]="'1.25em'"
-            class="zmdi zmdi-chevron-right"></i>
-        </div>
+    <div class="node-title">{{tree.Title}}</div>
+    <div class="node-subtitle">({{tree.Subtitle}})</div>
+    <div class="node-icon">
+        <img
+        [style.width]="'32px'"
+        src="/assets/business_center.svg">
     </div>
     `,
     styleUrls: ['./node.scss']
 })
-export class SiteNodeComponent {
+export class SiteNodeComponent implements OnInit {
+    @Input() size;
     @Input() tree;
     @Input() isSelected: boolean;
+
+    ngOnInit() {
+        if (!this.size) this.size = 1.2;
+    }
 }

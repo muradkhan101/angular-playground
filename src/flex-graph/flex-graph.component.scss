@@ -55,3 +55,8 @@ flex-graph:host {
     justify-content: space-evenly;
     flex-grow: 1;
 }
+
+flex-graph.is-adjusted:host {
+    position: relative;
+    left: -30%;
+}

@@ -8,7 +8,7 @@
 }
 multiple-element-node:host,
 building-node:host,
-client-node:host {
+site-node:host {
     height: auto;
 }
 blank-node:host {
@@ -16,14 +16,15 @@ blank-node:host {
     padding: 0;
     width: 1px;
     background: #c4c4c4;
+    height: 120px;
 }
-client-node:host {
+site-node:host {
     .node-icon {
         line-height: 0;
         margin-bottom: 12px;
     }
 }
-site-node:host {
+alt-district-node:host {
     flex-direction: row;
     padding: 0;
     margin: 0;

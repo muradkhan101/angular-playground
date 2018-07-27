@@ -13,11 +13,12 @@
 ></div>
 <div class="children-wrapper" #children>
   <div class="children" collapsed-graph
-     [renderCollapsed]="tree | shouldCollapse"
+     [renderCollapsed]="(tree | shouldCollapse) && tree.Level > 8"
      [childCollection]="tree.Children">
     <flex-graph
       *ngFor="let child of tree.Children"
       [tree]="child"
-      [isRoot]="false"></flex-graph>
+      [isRoot]="false"
+      [ngClass]="{'is-adjusted': child.IsAdjusted && child.Children.length === 0}"></flex-graph>
   </div>
 </div>

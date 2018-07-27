@@ -1,7 +1,8 @@
 import {
     Component,
     Input,
-    OnInit
+    OnInit,
+    ElementRef
 } from '@angular/core';
 
 @Component({
@@ -23,8 +24,10 @@ export class PersonNodeComponent implements OnInit {
     @Input() size;
     @Input() tree;
 
+    constructor(private el: ElementRef) {}
     color;
     ngOnInit() {
+        if (this.tree.IsAdjusted && !this.tree.Children.length) this.el.nativeElement.classList.add('is-adjusted')
         if (!this.size) this.size = 2;
 
         let tree = this.tree;

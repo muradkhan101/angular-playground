@@ -3,15 +3,17 @@ import { ElementRef, ChangeDetectorRef } from '@angular/core';
 export type NodeType = 'Person' | 'Building' | 'Client' | 'District' | 'Blank' | 'Site';
 
 export interface Graph {
+    Org_ID?: string;
     Type: NodeType;
     Title: string;
     Subtitle: string;
     AltText?: string;
+    AllocationPercentage?: number;
     Layer: number;
-    Level?: number;
+    Level: number;
     ShiftType?: 'Day' | 'Night';
+    IsAdjusted?: boolean;
     Children: Array<Graph>;
-    IsCollapsed?: boolean;
 }
 
 export abstract class BaseGraphComponent {
