@@ -5,15 +5,14 @@
     position: relative;
 }
 .carousel-items {
-    display: flex;
-    align-items: center;
     position: relative;
     perspective: 500px;
+    transform: translateX(600px);
 }
 .carousel-pickers {
     display: flex;
     justify-content: center;
-    position: absolute;
+    position: relative;
     width: 100%;
     left: 0;
     bottom: 8px;

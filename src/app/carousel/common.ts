@@ -1,1 +1,1 @@
-export type CarouselState = 'VISIBLE' | 'LEFT' | 'RIGHT' | 'NOT_VISIBLE';
+export type CarouselState = 'VISIBLE' | 'LEFT' | 'RIGHT' | 'NOT_VISIBLE' | 'LEFT_NOT_VISIBLE' | 'RIGHT_NOT_VISIBLE';

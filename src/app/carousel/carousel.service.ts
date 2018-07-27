@@ -19,7 +19,9 @@ export class CarouselService {
     getItemState(itemIndex: number): CarouselState {
         if (this.activeIndex === itemIndex) return 'VISIBLE';
         if (this.activeIndex === this.getNextIndex(itemIndex, 1)) return 'LEFT';
+        if (this.activeIndex === this.getNextIndex(itemIndex, 2)) return 'LEFT_NOT_VISIBLE';
         if (this.activeIndex === this.getNextIndex(itemIndex, -1)) return 'RIGHT';
+        if (this.activeIndex === this.getNextIndex(itemIndex, -2)) return 'RIGHT_NOT_VISIBLE';
         return 'NOT_VISIBLE';
     }
     move(direction: 1 | -1) {
@@ -30,7 +32,7 @@ export class CarouselService {
         this.activeIndex = index;
         this.currentState.next(index);
     }
-    private getNextIndex(itemIndex: number, direction: 1 | -1): number {
+    private getNextIndex(itemIndex: number, direction: number): number {
         if (itemIndex > this.itemCount - 1 || itemIndex < 0) throw new Error('Index not in range');
         return (itemIndex + direction + this.itemCount) % this.itemCount;
     }
