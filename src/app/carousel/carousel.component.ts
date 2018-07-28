@@ -1,24 +1,16 @@
 import {
-  AfterContentInit,
   Component,
-  ContentChildren,
-  ViewChild,
   OnInit,
-  QueryList,
-  ViewContainerRef,
   Input,
 } from '@angular/core';
 import { CarouselService } from './carousel.service';
-import { CarouselItemComponent } from './carousel-item.component';
 
 @Component({
   selector: 'app-carousel',
   templateUrl: './carousel.component.html',
   styleUrls: ['./carousel.component.scss']
 })
-export class CarouselComponent implements OnInit, AfterContentInit {
-  @ViewChild('items', {read: ViewContainerRef}) items: ViewContainerRef;
-  @ContentChildren(CarouselItemComponent) carouselItems: QueryList<CarouselItemComponent>;
+export class CarouselComponent implements OnInit {
   @Input() height: number | string = '100%';
 
   state = {
@@ -34,9 +26,5 @@ export class CarouselComponent implements OnInit, AfterContentInit {
   }
   moveToItem(index) {
     this.carouselService.setIndex(index);
-  }
-  ngAfterContentInit() {
-    console.log(this.items);
-    this.items.remove(1);
   }
 }
