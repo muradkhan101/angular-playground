@@ -62,23 +62,9 @@ import { SideScrollerComponent } from './side-scroller/side-scroller.component';
 import { DatePillPickerModule } from './date-pill-picker/date-pill-picker.module';
 import { GraphNodeComponent, EfficientTreeComponent } from '../graph';
 import { TimeDurationPipe } from './time-duration.pipe';
-import {
-  FlexGraphComponent,
-  SiteNodeComponent,
-  AltDistrictNodeComponent,
-  PersonNodeComponent,
-  BlankNodeComponent,
-  ShouldCollapsePipe,
-  NodeRendererComponent,
-  MultipleElementNodeComponent,
-  DistrictNodeComponent,
-  SelectedClassPipe,
-  NodeInTreePipe,
-} from '../flex-graph';
-import { CollapsedGraphComponent } from '../flex-graph';
-import { graphReducer } from '../flex-graph/store';
-import { AttributeSelectorComponent } from './attribute-selector/attribute-selector.component';
 import { CarouselModule } from './carousel/carousel.module';
+
+import { GraphModule } from '../flex-graph';
 
 @NgModule({
   declarations: [
@@ -121,20 +107,6 @@ import { CarouselModule } from './carousel/carousel.module';
     TimeDurationPipe,
     GraphNodeComponent,
     EfficientTreeComponent,
-    FlexGraphComponent,
-    SiteNodeComponent,
-    AltDistrictNodeComponent,
-    PersonNodeComponent,
-    BlankNodeComponent,
-    ShouldCollapsePipe,
-    CollapsedGraphComponent,
-    AttributeSelectorComponent,
-    NodeRendererComponent,
-    MultipleElementNodeComponent,
-    DistrictNodeComponent,
-    SelectedClassPipe,
-    NodeInTreePipe,
-    SiteNodeComponent,
   ],
   imports: [
     BrowserModule,
@@ -142,11 +114,12 @@ import { CarouselModule } from './carousel/carousel.module';
     ReactiveFormsModule,
     HttpClientModule,
     DatePillPickerModule,
-    StoreModule.forRoot({graph: graphReducer}),
+    StoreModule.forRoot({}),
     EffectsModule.forRoot(effects),
     AgmCoreModule.forRoot({ apiKey: 'AIzaSyCGSBIO0mqqVSvOBQkGPw2CeeMNjPitykI'}),
     NgbModule.forRoot(),
     CarouselModule,
+    GraphModule,
   ],
   providers: [WebsocketService, ObservableService, OtherService, AsyncService],
   bootstrap: [AppComponent],

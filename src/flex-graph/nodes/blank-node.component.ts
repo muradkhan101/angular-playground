@@ -8,6 +8,7 @@ import { Component, Input } from '@angular/core';
     styleUrls: ['./node.scss'],
 })
 export class BlankNodeComponent {
+    @Input() size;
     @Input() tree;
     @Input() isSelected: boolean;
 }

@@ -24,6 +24,7 @@ import { Component, Input } from '@angular/core';
     styleUrls: ['./node.scss']
 })
 export class AltDistrictNodeComponent {
+    @Input() size;
     @Input() tree;
     @Input() isSelected: boolean;
 }
