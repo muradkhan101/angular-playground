@@ -1,5 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
+import { Routes, RouterModule } from '@angular/router';
+
 import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -65,7 +67,14 @@ import { TimeDurationPipe } from './time-duration.pipe';
 import { CarouselModule } from './carousel/carousel.module';
 
 import { GraphModule } from '../flex-graph';
+import { RoutingAlignmentModule } from './routing-alignment/routing-alignment.module';
 
+const routes: Routes = [
+  {
+    path: 'align',
+    loadChildren: './routing-alignment/routing-alignment.module#RoutingAlignmentModule'
+  }
+]
 @NgModule({
   declarations: [
     AppComponent,
@@ -120,6 +129,8 @@ import { GraphModule } from '../flex-graph';
     NgbModule.forRoot(),
     CarouselModule,
     GraphModule,
+    RoutingAlignmentModule,
+    RouterModule.forRoot(routes),
   ],
   providers: [WebsocketService, ObservableService, OtherService, AsyncService],
   bootstrap: [AppComponent],

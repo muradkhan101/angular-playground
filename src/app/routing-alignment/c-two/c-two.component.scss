@@ -1,0 +1,15 @@
+:host {
+    display: block;
+    width: 50%;
+}
+.reg-div {
+    height: 400px;
+    width: 100%;
+    background: saddlebrown;
+}
+.wide-div {
+    width: 200%;
+    transform: translateX(-50%);
+    height: 400px;
+    background: goldenrod;
+}

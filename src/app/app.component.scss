@@ -14,3 +14,26 @@
 h1, h3 {
     white-space: nowrap;
 }
+
+.container {
+    width: 100%;
+    display: flex;
+    .item-one {
+        width: 50%;
+        height: 400px;
+        background: orange;
+    }
+    .inner-container {
+        width: 50%;
+    }
+    .item-two {
+        height: 400px;
+        background: purple;
+    }
+    .wide-item {
+        width: 200%;
+        transform: translateX(-50%);
+        height: 400px;
+        background: skyblue;
+    }
+}
