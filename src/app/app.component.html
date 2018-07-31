@@ -78,18 +78,8 @@
 
 <!-- <obs></obs> -->
 
-<div class="container">
-  <div class="item-one">
-    blah
-  </div>
-  <div>
-    <div class="inner-container">
-      <div class="item-two"></div>
-      <div class="item-three"></div>
-    </div>
-  </div>
-</div>
-
+<router-outlet></router-outlet>
+<a [routerLink]="['align']">Load align component</a>
 <app-carousel style="height: 450px;">
   <div style="width: 500px; height: 400px; background: cyan; position: absolute;" mk-carousel-item>
   </div>
