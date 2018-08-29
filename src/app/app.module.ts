@@ -68,6 +68,7 @@ import { CarouselModule } from './carousel/carousel.module';
 
 import { GraphModule } from '../flex-graph';
 import { RoutingAlignmentModule } from './routing-alignment/routing-alignment.module';
+import { AccordionComponent } from './accordion/accordion.component';
 
 const routes: Routes = [
   {
@@ -116,6 +117,7 @@ const routes: Routes = [
     TimeDurationPipe,
     GraphNodeComponent,
     EfficientTreeComponent,
+    AccordionComponent,
   ],
   imports: [
     BrowserModule,
@@ -129,7 +131,7 @@ const routes: Routes = [
     NgbModule.forRoot(),
     CarouselModule,
     GraphModule,
-    RoutingAlignmentModule,
+    // RoutingAlignmentModule,
     RouterModule.forRoot(routes),
   ],
   providers: [WebsocketService, ObservableService, OtherService, AsyncService],
