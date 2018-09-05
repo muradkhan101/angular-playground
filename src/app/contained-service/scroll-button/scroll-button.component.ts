@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ScrollService } from '../scroll.service';
 
 @Component({
   selector: 'app-scroll-button',
@@ -7,7 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ScrollButtonComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private scrollService: ScrollService
+  ) { }
 
   ngOnInit() {
   }

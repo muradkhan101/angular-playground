@@ -1,0 +1,9 @@
+.button-container {
+    display: flex;
+    .button {
+        border-radius: 50%;
+        border: 1px solid cyan;
+        padding: 8px;
+        &:first-child { margin-right: 12px; }
+    }
+}

@@ -70,6 +70,8 @@ import { GraphModule } from '../flex-graph';
 import { RoutingAlignmentModule } from './routing-alignment/routing-alignment.module';
 import { AccordionComponent } from './accordion/accordion.component';
 
+import { ContainedServiceModule } from './contained-service/contained-service.module';
+
 const routes: Routes = [
   {
     path: 'align',
@@ -133,6 +135,7 @@ const routes: Routes = [
     GraphModule,
     // RoutingAlignmentModule,
     RouterModule.forRoot(routes),
+    ContainedServiceModule,
   ],
   providers: [WebsocketService, ObservableService, OtherService, AsyncService],
   bootstrap: [AppComponent],
