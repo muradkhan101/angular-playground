@@ -7,11 +7,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AccordionComponent } from './accordion/accordion.component';
+import { CollapsibleTableComponent } from './collapsible-table/collapsible-table.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AccordionComponent,
+    CollapsibleTableComponent,
   ],
   imports: [
     BrowserModule,

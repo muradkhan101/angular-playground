@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-
+  state = {
+    open: {
+      row1: false,
+      row2: false
+    }
+  }
 }
