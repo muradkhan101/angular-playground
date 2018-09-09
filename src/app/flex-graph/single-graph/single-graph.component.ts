@@ -10,11 +10,20 @@ import { BaseGraphComponent } from '../shared/base-graph';
 export class SingleGraphComponent extends BaseGraphComponent implements OnInit {
   @Input() graph: IGraph = mock as any;
   @Input() isRoot = false;
+  @Input() parentState = { isCollapsed: true, graph: undefined };
+
+  state = {
+    isCollapsed: true,
+  }
   constructor(
     parent: ElementRef,
     cdr: ChangeDetectorRef,
   ) { super(parent, cdr); }
-
+  shouldRenderCollapsed() {
+    return this.graph.Type === 'Grouping'
+      && this.graph.Title === 'Position'
+      && this.graph.Children.length > 1;
+  }
   ngOnInit() {
     if (this.isRoot && this.graph) {
       window.addEventListener('resize', this.ngAfterViewInit);

@@ -1,3 +1,32 @@
-<p>
-  single-graph works!
-</p>
+<div class="top-connector"
+  *ngIf="!isRoot && shouldRenderTopLine(tree)"
+></div>
+<div [class]="'node-content'"
+  node-renderer
+  [shouldRenderCollapsed]="shouldRenderCollapsed()"
+  [isCollapsed]="parentState.isCollapsed"
+  [tree]="tree"
+  [depth]="depth">
+</div>
+<div class="bottom-connector"
+   *ngIf="shouldRenderBottomLine(tree, children)"
+></div>
+<div class="wide-connector" #wideConnector
+  *ngIf="children.children[0].children.length > 0"
+  [ngStyle]="getWideLinePosition(children.children[0])"
+></div>
+<div class="children-wrapper" #children>
+  <div class="children">
+    <app-grouped-graph
+      *ngIf="shouldRenderCollapsed() && state.isCollapsed"
+      [parentGraph]="graph"
+    ></app-grouped-graph>
+    <app-single-graph
+      *ngIf="!shouldRenderCollapsed() || !state.isCollapsed"
+      *ngFor="let child of graph.Children"
+      [tree]="child"
+      [isRoot]="false"
+      [parentState]="{ graph: graph, isCollapsed: state.isCollapsed }"
+      [ngClass]="{'is-adjusted': child.IsAdjusted && child.Children.length === 0}"></app-single-graph>
+  </div>
+</div>
