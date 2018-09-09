@@ -10,7 +10,7 @@ import {
 @Component({
   selector: 'app-accordion',
   template: `
-  <div class="accordion-wrapper" [ngClass]="{closed: !open}" [style.height]="content.offsetHeight + 'px'">
+  <div [@accordionState]="open" class="accordion-wrapper">
     <div class="accordion-content" #content>
       <ng-content></ng-content>
     </div>
@@ -19,8 +19,9 @@ import {
   styleUrls: ['./accordion.component.scss'],
   animations: [
     trigger('accordionState', [
-      state('true', style({height: '100%'})),
-      state('false', style({height: 0}))
+      state('true', style({height: '*'})),
+      state('false', style({height: 0})),
+      transition('false <=> true', animate('350ms ease-out'))
     ])
   ]
 })
