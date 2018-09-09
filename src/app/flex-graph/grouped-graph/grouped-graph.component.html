@@ -1,14 +1,16 @@
 <div class="top-connector"
-  *ngIf="!isRoot && shouldRenderTopLine(childCollection[0])"
+  *ngIf="shouldRenderTopLine(childCollection[0])"
 ></div>
 <multiple-element-node
+  (click)="emitCollapse()"
   *ngIf="childCollection[0].Type !== 'Grouping'"
-  [title]="'Multiple'"
-  [subtitle]="'A Job'"
+  [title]="state.Title"
+  [subtitle]="state.SubTitle"
   [size]="childCollection.length > 5 ? 1 : 1.25"
   [trees]="childCollection">
 </multiple-element-node>
-<div class="toggle-container" *ngIf="firstRendered && state.collapsedChildren.length">
+<div class="toggle-container"
+  *ngIf="firstRendered && state.collapsedChildren.length">
   <div class="toggle toggle-open">
     <i class="zmdi zmdi-plus-circle"></i>
   </div>

@@ -6,6 +6,7 @@ app-single-graph:host {
 }
 
 .node-content {
+    cursor: pointer;
     display: inline-block;
     position: relative;
     
@@ -48,4 +49,19 @@ app-single-graph:host {
     display: flex;
     justify-content: space-evenly;
     flex-grow: 1;
+}
+.toggle-container {
+    transform: translateY(-16px);
+    background: linear-gradient(to bottom, transparent, white);
+    display: flex;
+    justify-content: center;
+}
+.toggle {
+    width: 16px;
+    height: 16px;
+    margin: 0 auto;
+    transform: translateY(4px);
+}
+.toggle.toggle-close {
+    color: #d1021b;
 }

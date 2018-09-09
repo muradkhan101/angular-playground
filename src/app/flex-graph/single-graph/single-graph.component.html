@@ -3,10 +3,15 @@
 ></div>
 <div [class]="'node-content'"
   node-renderer
-  [shouldRenderCollapsed]="shouldRenderCollapsed()"
-  [isCollapsed]="parentState.isCollapsed"
   [tree]="graph"
-  [depth]="depth">
+  [depth]="depth"
+  (click)="toggleCollapse.emit(true)">
+</div>
+<div class="toggle-container"
+  *ngIf="shouldRenderCollapsed(parentState.graph) && !parentState.isCollapsed">
+  <div class="toggle toggle-close">
+    <i class="zmdi zmdi-minus-circle"></i>
+  </div>
 </div>
 <div class="bottom-connector"
    *ngIf="shouldRenderBottomLine(graph, children)"
@@ -18,13 +23,15 @@
 <div class="children-wrapper" #children>
   <div class="children">
     <app-grouped-graph
-      *ngIf="shouldRenderCollapsed() && state.isCollapsed"
+      *ngIf="shouldRenderCollapsed(graph) && state.isCollapsed"
+      (toggleCollapse)="updateCollapseStatus($event)"
       [childCollection]="graph.Children"
       [firstRendered]="true"
     ></app-grouped-graph>
-    <ng-container *ngIf="!shouldRenderCollapsed() || !state.isCollapsed">
+    <ng-container *ngIf="!shouldRenderCollapsed(graph) || !state.isCollapsed">
       <app-single-graph
         *ngFor="let child of graph.Children"
+        (toggleCollapse)="updateCollapseStatus($event)"
         [graph]="child"
         [isRoot]="false"
         [parentState]="{ graph: graph, isCollapsed: state.isCollapsed }"

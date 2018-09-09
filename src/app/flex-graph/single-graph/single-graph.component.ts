@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, ChangeDetectorRef, ElementRef } from '@angular/core';
+import { Component, OnInit, Input, ChangeDetectorRef, ElementRef, Output, EventEmitter } from '@angular/core';
 import { IGraph } from '../shared/interfaces';
 import { mock } from '../mock';
 import { BaseGraphComponent } from '../shared/base-graph';
@@ -11,6 +11,7 @@ export class SingleGraphComponent extends BaseGraphComponent implements OnInit {
   @Input() graph: IGraph = mock as any;
   @Input() isRoot = false;
   @Input() parentState = { isCollapsed: true, graph: undefined };
+  @Output() toggleCollapse = new EventEmitter();
 
   state = {
     isCollapsed: true,
@@ -19,10 +20,18 @@ export class SingleGraphComponent extends BaseGraphComponent implements OnInit {
     parent: ElementRef,
     cdr: ChangeDetectorRef,
   ) { super(parent, cdr); }
-  shouldRenderCollapsed() {
-    return this.graph.Type === 'Grouping'
-      && this.graph.Title === 'Position'
-      && this.graph.Children.length > 1;
+  
+  updateCollapseStatus(status) {
+    this.state.isCollapsed = status;
+    window.requestAnimationFrame(() => this.cdr.detectChanges());
+  }
+
+  shouldRenderCollapsed(node) {
+    if (!node) return false;
+
+    return node.Type === 'Grouping'
+      && node.Title === 'Position'
+      && node.Children.length > 1;
   }
   ngOnInit() {
     if (this.isRoot && this.graph) {
