@@ -24,6 +24,16 @@ import {
     NodeRendererComponent,
     PersonNodeComponent,
     SiteNodeComponent,
+  ],
+  exports: [
+    SingleGraphComponent,
+    GroupedGraphComponent,
+    BlankNodeComponent,
+    DistrictNodeComponent,
+    MultipleElementNodeComponent,
+    NodeRendererComponent,
+    PersonNodeComponent,
+    SiteNodeComponent,
   ]
 })
 export class FlexGraphModule { }

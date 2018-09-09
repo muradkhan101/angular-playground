@@ -1,3 +1,31 @@
-<p>
-  grouped-graph works!
-</p>
+<div class="top-connector"
+  *ngIf="!isRoot && shouldRenderTopLine(childCollection[0])"
+></div>
+<multiple-element-node
+  *ngIf="childCollection[0].Type !== 'Grouping'"
+  [title]="'Multiple'"
+  [subtitle]="'A Job'"
+  [size]="childCollection.length > 5 ? 1 : 1.25"
+  [trees]="childCollection">
+</multiple-element-node>
+<div class="toggle-container" *ngIf="firstRendered && state.collapsedChildren.length">
+  <div class="toggle toggle-open">
+    <i class="zmdi zmdi-plus-circle"></i>
+  </div>
+</div>
+<div class="bottom-connector"
+   *ngIf="shouldRenderBottomLine(childCollection[0], children)"
+></div>
+<div class="wide-connector" #wideConnector
+  *ngIf="children.children[0].children.length > 0"
+  [ngStyle]="getWideLinePosition(children.children[0])"
+></div>
+<div class="children-wrapper" #children>
+  <div class="children">
+    <app-grouped-graph
+      *ngIf="state.collapsedChildren.length > 0"
+      [childCollection]="state.collapsedChildren"
+      [firstRendered]="false"
+    ></app-grouped-graph>
+  </div>
+</div>

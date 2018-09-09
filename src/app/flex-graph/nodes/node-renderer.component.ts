@@ -7,8 +7,8 @@ import { Component, Input } from '@angular/core';
         <blank-node *ngIf="tree.Type === 'Grouping'" [tree]="tree"></blank-node>
         <district-node *ngIf="tree.Type === 'District'" [size]="size" [tree]="tree"></district-node>
         <site-node *ngIf="tree.Type === 'Site'" [tree]="tree"></site-node>
-        <alt-district-node *ngIf="tree.Type === 'FM'" [size]="size" [tree]="tree"></alt-district-node>
-        <div class="toggle-container" *ngIf="shouldRenderCollapsed">
+        <!-- <alt-district-node *ngIf="tree.Type === 'FM'" [size]="size" [tree]="tree"></alt-district-node> -->
+        <div class="toggle-container" *ngIf="shouldRenderCollapsed && !isCollapsed">
             <div class="toggle toggle-close">
             <i class="zmdi zmdi-minus-circle"></i>
             </div>

@@ -1,15 +1,15 @@
 <div class="top-connector"
-  *ngIf="!isRoot && shouldRenderTopLine(tree)"
+  *ngIf="!isRoot && shouldRenderTopLine(graph)"
 ></div>
 <div [class]="'node-content'"
   node-renderer
   [shouldRenderCollapsed]="shouldRenderCollapsed()"
   [isCollapsed]="parentState.isCollapsed"
-  [tree]="tree"
+  [tree]="graph"
   [depth]="depth">
 </div>
 <div class="bottom-connector"
-   *ngIf="shouldRenderBottomLine(tree, children)"
+   *ngIf="shouldRenderBottomLine(graph, children)"
 ></div>
 <div class="wide-connector" #wideConnector
   *ngIf="children.children[0].children.length > 0"
@@ -19,14 +19,16 @@
   <div class="children">
     <app-grouped-graph
       *ngIf="shouldRenderCollapsed() && state.isCollapsed"
-      [parentGraph]="graph"
+      [childCollection]="graph.Children"
+      [firstRendered]="true"
     ></app-grouped-graph>
-    <app-single-graph
-      *ngIf="!shouldRenderCollapsed() || !state.isCollapsed"
-      *ngFor="let child of graph.Children"
-      [tree]="child"
-      [isRoot]="false"
-      [parentState]="{ graph: graph, isCollapsed: state.isCollapsed }"
-      [ngClass]="{'is-adjusted': child.IsAdjusted && child.Children.length === 0}"></app-single-graph>
+    <ng-container *ngIf="!shouldRenderCollapsed() || !state.isCollapsed">
+      <app-single-graph
+        *ngFor="let child of graph.Children"
+        [graph]="child"
+        [isRoot]="false"
+        [parentState]="{ graph: graph, isCollapsed: state.isCollapsed }"
+        [ngClass]="{'is-adjusted': child.IsAdjusted && child.Children.length === 0}"></app-single-graph>
+    </ng-container>
   </div>
 </div>

@@ -1,5 +1,5 @@
 import { Component, ChangeDetectorRef } from '@angular/core';
-
+import { mock } from './flex-graph/mock';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -10,13 +10,10 @@ export class AppComponent {
     private cdr: ChangeDetectorRef
   ) {}
   state = {
+    mock,
     open: {
       row1: false,
       row2: false
     }
-  }
-  ngDoCheck() {
-    console.log('CHECKINg');
-    this.cdr.detectChanges();
   }
 }

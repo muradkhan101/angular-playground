@@ -8,7 +8,7 @@ import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AccordionComponent } from './accordion/accordion.component';
 import { CollapsibleTableComponent } from './collapsible-table/collapsible-table.component';
-
+import { FlexGraphModule } from './flex-graph/flex-graph.module';
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,6 +20,7 @@ import { CollapsibleTableComponent } from './collapsible-table/collapsible-table
     BrowserAnimationsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    FlexGraphModule,
     // RoutingAlignmentModule,
   ],
   providers: [],
