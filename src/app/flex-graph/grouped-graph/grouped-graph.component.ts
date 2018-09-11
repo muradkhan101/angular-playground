@@ -30,19 +30,18 @@ export class GroupedGraphComponent extends BaseGraphComponent implements OnInit 
   }
 
   private collapseChildren(children: Array<IGraph>) {
-    // function findPeopleNodes(node: IGraph) {
-    //   if (node.Type === 'Person') collapsedChildren.push(node);
-    //   else children.forEach(child => findPeopleNodes(child));
-    // }
-    // let collapsedChildren: Array<IGraph> = [];
-    // children.forEach(child => findPeopleNodes(child));
-    // console.log('COLLAPSED CHILDREN', collapsedChildren)
-    // return collapsedChildren;
+    function findPeopleNodes(node: IGraph, depth = 0) {
+      if (node.Type === 'Person' && depth > 0 && !children.includes(node)) collapsedChildren.push(node);
+      else node.Children.forEach(child => findPeopleNodes(child, depth + 1));
+    }
+    let collapsedChildren: Array<IGraph> = [];
+    children.forEach(findPeopleNodes);
+    return collapsedChildren;
 
-    return children.reduce(( collection: Array<IGraph>, child ) => {
-      child.Children.forEach(subChild => collection.push(subChild))
-      return collection;
-    }, [])
+    // return children.reduce(( collection: Array<IGraph>, child ) => {
+    //   child.Children.forEach(subChild => collection.push(subChild))
+    //   return collection;
+    // }, [])
   }
 
   private getTreeDepth(node: IGraph, depth = 0) {

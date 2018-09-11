@@ -23,14 +23,16 @@ export class SingleGraphComponent extends BaseGraphComponent implements OnInit {
   
   updateCollapseStatus(status) {
     this.state.isCollapsed = status;
-    window.requestAnimationFrame(() => this.cdr.detectChanges());
+    this.cdr.detectChanges();
+    
+    window.requestAnimationFrame( () => window.dispatchEvent(new Event('resize')));
   }
 
   shouldRenderCollapsed(node) {
     if (!node) return false;
 
     return node.Type === 'Grouping'
-      && node.Title === 'Position'
+      && ['Position'].includes(node.Title)
       && node.Children.length > 1;
   }
   ngOnInit() {

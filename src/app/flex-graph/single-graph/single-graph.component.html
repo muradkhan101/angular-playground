@@ -9,7 +9,7 @@
 </div>
 <div class="toggle-container"
   *ngIf="shouldRenderCollapsed(parentState.graph) && !parentState.isCollapsed">
-  <div class="toggle toggle-close">
+  <div class="toggle toggle-close" (click)="toggleCollapse.emit(true)">
     <i class="zmdi zmdi-minus-circle"></i>
   </div>
 </div>

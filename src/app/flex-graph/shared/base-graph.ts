@@ -22,7 +22,7 @@ export class BaseGraphComponent {
             left: left + 'px',
         };
     }
-        public shouldRenderTopLine(tree: IGraph): boolean {
+    public shouldRenderTopLine(tree: IGraph): boolean {
         return tree.Type !== 'Grouping';
     }
         public shouldRenderBottomLine(tree: IGraph, children: HTMLElement): boolean {

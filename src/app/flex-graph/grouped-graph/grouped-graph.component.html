@@ -11,7 +11,7 @@
 </multiple-element-node>
 <div class="toggle-container"
   *ngIf="firstRendered && state.collapsedChildren.length">
-  <div class="toggle toggle-open">
+  <div (click)="emitCollapse()" class="toggle toggle-open">
     <i class="zmdi zmdi-plus-circle"></i>
   </div>
 </div>
