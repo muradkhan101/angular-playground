@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output, ViewChildren, ElementRef } from '@angular/core';
 
 import { DropdownItem } from '../dropdown/dropdown.component';
 import { CheckBoxManager } from './checkBoxManager';
@@ -14,6 +14,8 @@ export class MultiSelectDropdownComponent implements OnInit {
 
   @Output() selected = new EventEmitter<Array<DropdownItem>>();
 
+  @ViewChildren('dropdownEl') dropdownElements: Array<ElementRef>;
+
   state = {
     open: false,
     selected: [],
@@ -26,20 +28,30 @@ export class MultiSelectDropdownComponent implements OnInit {
     this.items.forEach(item => {
       this.state.checkboxes.addCheckbox(item.Value, true);
     })
-    console.log('INFO', this.state.checkboxes.mainChecked);
   }
-
-  toggleDropdown(event) {
-    this.state.open = !this.state.open;
-    event.stopPropagation()
-    if (this.state.open) {
-      // create an event listener to close dropdown
-      let eventFn = (e) => {
+  private setUpCloseListener() {
+    // create an event listener to close dropdown
+    let eventFn = (e) => {
+      e.stopPropagation();
+      let clickedElementInDropdown = this.dropdownElements.reduce((result, element) => {
+        return (element.nativeElement.contains(e.target)
+          || e.target === element.nativeElement)
+          || result;
+      }, false)
+      if (!clickedElementInDropdown) {
         this.state.open = false;
         window.removeEventListener('click', eventFn);
-      };
-      // when a user clicks anywhere on the page
-      window.addEventListener('click', eventFn);
+      }
+    };
+    // when a user clicks anywhere on the page
+    window.addEventListener('click', eventFn);
+  }
+  toggleDropdown(event) {
+    this.state.open = !this.state.open;
+
+    event.stopPropagation()
+    if (this.state.open) {
+     this.setUpCloseListener();
     }
   }
   search(event) {

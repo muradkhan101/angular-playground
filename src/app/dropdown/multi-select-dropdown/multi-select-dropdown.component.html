@@ -4,7 +4,7 @@
   (click)="toggleDropdown($event)">
   Select {{placeholder}} <i class="zmdi zmdi-chevron-down"></i>
 </button>
-<div
+<div #dropdownEl
   *ngIf="state.open"
   class="dropdown-button">
   <input
@@ -14,7 +14,7 @@
   <i class="zmdi zmdi-search"></i>
 </div>
 
-<ul *ngIf="state.open">
+<ul *ngIf="state.open" #dropdownEl>
   <li>
     <input
       type="checkbox"
