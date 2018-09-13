@@ -1,0 +1,11 @@
+<button
+  class="dropdown-button"
+  (click)="toggleDropdown($event)">
+  {{placeholder || 'Select'}} <i class="zmdi zmdi-chevron-down"></i>
+</button>
+
+<ul *ngIf="state.open">
+  <li
+    *ngFor="let item of items"
+    (click)="output(item)">{{item.Name}}</li>
+</ul>

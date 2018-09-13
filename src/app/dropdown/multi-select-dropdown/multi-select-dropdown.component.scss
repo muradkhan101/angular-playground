@@ -1,0 +1,10 @@
+ul li:not(:last-of-type) {
+    border-bottom: 1px solid #aeaeae;
+}
+
+input {
+    border: none;
+}
+.dropdown-button {
+    display: inline-block;
+}

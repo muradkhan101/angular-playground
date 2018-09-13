@@ -9,11 +9,20 @@ export class AppComponent {
   constructor(
     private cdr: ChangeDetectorRef
   ) {}
+  dropdown = [
+    {Name: 'One', Value: 1},
+    {Name: 'Two', Value: 2},
+    {Name: 'Three', Value: 3}
+  ]
   state = {
     mock,
     open: {
       row1: false,
       row2: false
     }
+  }
+
+  selected(item) {
+    console.log(item);
   }
 }

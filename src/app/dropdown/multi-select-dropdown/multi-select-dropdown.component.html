@@ -1,0 +1,32 @@
+<button
+  *ngIf="!state.open"
+  class="dropdown-button"
+  (click)="toggleDropdown($event)">
+  Select {{placeholder}} <i class="zmdi zmdi-chevron-down"></i>
+</button>
+<div
+  *ngIf="state.open"
+  class="dropdown-button">
+  <input
+    type="text"
+    (keyup)="search($event)"
+    placeholder="Search {{placeholder}}"/>
+  <i class="zmdi zmdi-search"></i>
+</div>
+
+<ul *ngIf="state.open">
+  <li>
+    <input
+      type="checkbox"
+      [indeterminate]="state.checkboxes.isIndeterminate"
+      [checked]="state.checkboxes.mainChecked"
+      (click)="state.checkboxes.toggleAll()">
+      Check All
+  </li>
+  <li
+    *ngFor="let item of (items | filter:'Name':state.search)"
+    (click)="select(item)">
+    <input type="checkbox" [checked]="state.checkboxes.getCheckboxStatus(item.Value)">
+    {{item.Name}}
+  </li>
+</ul>
