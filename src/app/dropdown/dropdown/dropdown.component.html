@@ -2,7 +2,8 @@
   tabindex="0"
   aria-haspopup="true"
   class="dropdown-button"
-  (click)="toggleDropdown($event)">
+  (click)="toggleDropdown($event)"
+  #button>
   {{placeholder || 'Select'}} <i class="zmdi zmdi-chevron-down"></i>
 </button>
 
@@ -11,6 +12,9 @@
   aria-role="menu">
   <li
     aria-role="menu-item"
-    *ngFor="let item of items"
-    (click)="output(item)">{{item.Name}}</li>
+    *ngFor="let item of items; let i = index "
+    (click)="output(item)"
+    [ngClass]="{'hovered': state.hovered === i}"
+    (mouseover)="state.hovered = i">
+    {{item.Name}}</li>
 </ul>
