@@ -59,10 +59,16 @@ export class MultiSelectDropdownComponent implements OnInit {
   }
   select(item: DropdownItem) {
     this.state.checkboxes.toggleOne(item.Value);
+    this.state.selected = this.state.checkboxes.checked.map(id => 
+      this.items.filter(otherItem => item.Value == otherItem.Value)[0]
+    );
   }
-  output(item: DropdownItem) {
+  toggleAll() {
+    this.state.checkboxes.toggleAll();
+    this.output();
+  }
+  output() {
     this.selected.emit(this.state.selected);
-    // this.state.open = false;
   }
 
 }

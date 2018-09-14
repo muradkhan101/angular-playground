@@ -21,12 +21,18 @@ export class GroupedGraphComponent extends BaseGraphComponent implements OnInit 
     cdr: ChangeDetectorRef,
   ) { super(parent, cdr); }
   ngOnInit() {
-    // console.log('[INFO] Next Tree');
-    this.state.collapsedChildren = this.collapseChildren(this.childCollection);
-    this.state.SubTitle = this.childCollection[0].SubTitle;
-    // console.log('[INFO] Child Collection', this.childCollection);
-    // console.log('[INFO] Collapsed Children', this.state.collapsedChildren);
-    // console.log('');
+    let allGroupingNodes = this.childCollection
+                            .map(node => node.Type === 'Grouping')
+                            .reduce((state, next) => next && state);
+
+    if (allGroupingNodes) {
+      let backupNodes = this.childCollection;
+      this.childCollection = this.collapseChildren(backupNodes);
+      this.state.collapsedChildren = this.collapseChildren(this.childCollection);
+    } else {
+      this.state.collapsedChildren = this.collapseChildren(this.childCollection);
+      this.state.SubTitle = this.childCollection[0].SubTitle;
+    }
   }
 
   private collapseChildren(children: Array<IGraph>) {

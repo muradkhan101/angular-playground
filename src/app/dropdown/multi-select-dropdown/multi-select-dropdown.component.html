@@ -1,4 +1,6 @@
 <button
+  tabindex="0"
+  aria-haspopup="true"
   *ngIf="!state.open"
   class="dropdown-button"
   (click)="toggleDropdown($event)">
@@ -14,16 +16,20 @@
   <i class="zmdi zmdi-search"></i>
 </div>
 
-<ul *ngIf="state.open" #dropdownEl>
-  <li>
+<ul
+  *ngIf="state.open"
+  aria-role="menu"
+  #dropdownEl>
+  <li aria-role="menuitem">
     <input
       type="checkbox"
       [indeterminate]="state.checkboxes.isIndeterminate"
       [checked]="state.checkboxes.mainChecked"
-      (click)="state.checkboxes.toggleAll()">
+      (click)="toggleAll()">
       Check All
   </li>
   <li
+    aria-role="menu-item"
     *ngFor="let item of (items | filter:'Name':state.search)"
     (click)="select(item)">
     <input type="checkbox" [checked]="state.checkboxes.getCheckboxStatus(item.Value)">
